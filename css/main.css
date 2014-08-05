@@ -1,6 +1,7 @@
 header {
 	background: #001D24;
 	border-bottom: solid 5px #001D24;
+	width: 100%;
 }
 
 #settings {
@@ -16,8 +17,8 @@ header {
 }
 
 .info {
-	text-align: right;
-	margin: -120px 110px 100px;
+	float: right;
+	margin: -33% 20%;
 	font-size: 20px 
 }
 
@@ -70,7 +71,6 @@ body {
 }
 
 #add {
-	margin-top: -20px;
 	background: #00CCCC;
 	font-size: 45px;
 }
