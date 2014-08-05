@@ -1,5 +1,5 @@
 header {
-	background: linear-gradient(#002933, #001D24);
+	background: #001D24;
 	border-bottom: solid 5px #001D24;
 }
 
@@ -9,7 +9,7 @@ header {
 
 #profile-pic {
 	display: block;
-	border-radius: 25%;
+	border-radius: 50%;
 	clear:both;
 	margin: 10px;
 	border: #002933 solid
@@ -41,7 +41,7 @@ header {
 }
 
 #notifications {
-	background: linear-gradient(#33FFFF, #009393);
+	background: #009393;
 	color: #003333;
 	font-size: 45px;
 }
@@ -61,17 +61,17 @@ header {
 }
 
 body {
-	background: linear-gradient(to right, #005252, #007A99, #005252);
+	background: #005252;
 }
 
 #find {
-	background: linear-gradient(#66FF66, #005200);
+	background: #66FF66;
 	font-size: 45px;
 }
 
 #add {
 	margin-top: -20px;
-	background: linear-gradient(#00CCCC, #005252);
+	background: #00CCCC;
 	font-size: 45px;
 }
 
