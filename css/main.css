@@ -17,14 +17,19 @@ header {
 }
 
 .info {
-	float: right;
-	margin: -33% 20%;
-	font-size: 20px 
+	float: center;
+	margin: 0 auto;
+	font-size: 20px;
+
+}
+
+#major {
+	float: center;
 }
 
 .info p {
 	font-weight: bold;
-	color: #fff
+	color: #000
 }
 
 .nav {
@@ -44,7 +49,7 @@ header {
 #notifications {
 	background: #009393;
 	color: #003333;
-	font-size: 3em;
+	font-size: 2em;
 }
 
 .major {
@@ -66,15 +71,21 @@ body {
 
 #find {
 	background: #66FF66;
-	font-size: 3em;
+	font-size: 2em;
 }
 
 #add {
 	background: #00CCCC;
-	font-size: 3em;
+	font-size: 2em;
 }
 
 .nav p img {
 	float: left;
 	margin: -5px;
 }
+
+.nav img {
+	height: 2em;
+	width: 2em;
+}
+
