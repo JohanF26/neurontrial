@@ -10,10 +10,9 @@ header {
 
 #profile-pic {
 	display: block;
-	border-radius: 50%;
+	border-radius: 100%;
 	clear:both;
 	margin: 10px;
-	border: #002933 solid
 }
 
 .info {
@@ -81,7 +80,7 @@ body {
 
 .nav p img {
 	float: left;
-	margin: -5px;
+	margin: -10px;
 }
 
 .nav img {
