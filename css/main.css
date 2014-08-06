@@ -4,6 +4,15 @@ header {
 	width: 100%;
 }
 
+.app-body {
+	background: url('../img/background.jpg');
+	margin-top: -10px;
+	background-size: 100%;
+	padding-bottom: 100%;
+	background-position: absolute;
+	height: 600px;
+}
+
 #settings {
 	float: right;
 }
@@ -13,6 +22,10 @@ header {
 	border-radius: 100%;
 	clear:both;
 	margin: 10px;
+}
+
+#profile-pic img {
+	margin-top: 10px;
 }
 
 .info {
@@ -37,8 +50,8 @@ header {
 
 .nav p {
 	margin: 20px;
-	padding-right: 100px;
-	padding-left: 40px;
+	padding-right: 60px;
+	padding-left: 20px;
 	padding-top: 15px;
 	padding-bottom: 15px;
 	border-radius: 50px;
@@ -65,9 +78,6 @@ header {
 	margin: 15px;
 }
 
-body {
-}
-
 #find {
 	background: #66FF66;
 	font-size: 2em;
@@ -78,13 +88,28 @@ body {
 	font-size: 2em;
 }
 
-.nav p img {
+/*.nav p img {
+	float: left;
+	margin: -10px;
+}*/
+
+#find img {
+	height: 2em;
+	width: 2em;
 	float: left;
 	margin: -10px;
 }
 
-.nav img {
+#notifications img {
 	height: 2em;
 	width: 2em;
+	float: left;
+	margin: -10px;
 }
 
+#add img {
+	height: 2em;
+	width: 2em;
+	float: left;
+	margin: -10px;
+}
