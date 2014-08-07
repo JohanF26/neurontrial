@@ -95,7 +95,7 @@ header {
 }
 
 #find {
-	background: #66FF66;
+	background: #68b12f;
 	color: #003333;
 	font-size: 2em;
 	box-shadow: 3px 3px 2px #3D991F
@@ -223,7 +223,7 @@ textarea {
 
 .book_form textarea {
 	padding: 8px;
-	width: 70%;
+	width: 60%;
 }
 
 .book_form button {
@@ -234,6 +234,7 @@ textarea {
     border:1px solid #aaa;
     box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
     border-radius:2px;
+    padding-right: 30px;
 }
 
 .book_form input:focus, .book_form textarea:focus {
@@ -244,20 +245,22 @@ textarea {
 
 button.submit {
     background-color: #68b12f;
-    border-bottom: 1px solid #5b992b;
     border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
-    box-shadow: inset 0 1px 0 0 #9fd574;
-    -webkit-box-shadow: 0 1px 0 0 #9fd574 inset ;
-    -moz-box-shadow: 0 1px 0 0 #9fd574 inset;
-    -ms-box-shadow: 0 1px 0 0 #9fd574 inset;
-    -o-box-shadow: 0 1px 0 0 #9fd574 inset;
-    color: white;
+    color:white;
     font-weight: bold;
     padding: 6px 20px;
     text-align: center;
-    text-shadow: 0 -1px 0 #396715;
+}
+
+button.submit:active {
+    background-color:#356b0b;
+     
+}
+
+.col-xs-8 a:active h2 {
+	background: #D4D7D7;
+}
+
+input:required, textarea:required {
+    background: #fff url("../img/required.png") no-repeat 98% center;
 }
