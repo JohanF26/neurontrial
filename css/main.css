@@ -1,3 +1,4 @@
+
 a {
 	text-decoration: none;
 }
@@ -6,11 +7,9 @@ a:hover {
 	text-decoration: none;
 }
 
-/*li {
+li {
 	list-style: none;
-	font-size: 1.25em;
-	font-family: 'Dosis', sans-serif;
-}*/
+}
 
 header {
 	background: #001D24;
@@ -56,7 +55,7 @@ header {
 
 .info p {
 	font-weight: bold;
-	color: #000
+	color: #fff
 }
 
 .nav {
@@ -150,7 +149,7 @@ header {
 				ADD
 **************************************/
 
-h2 {
+.book_form h2 {
 	padding-right: 20px;
 	padding-left: 20px;
 	padding-top: 15px;
@@ -226,7 +225,7 @@ textarea {
 	width: 60%;
 }
 
-.book_form button {
+.book_form a {
 	margin-left: 100px;
 }
 
@@ -243,7 +242,7 @@ textarea {
     box-shadow: 0 0 3px #aaa; 
 }
 
-button.submit {
+a.submit {
     background-color: #68b12f;
     border-radius: 3px;
     color:white;
@@ -252,7 +251,7 @@ button.submit {
     text-align: center;
 }
 
-button.submit:active {
+a.submit:active {
     background-color:#356b0b;
      
 }
@@ -263,4 +262,67 @@ button.submit:active {
 
 input:required, textarea:required {
     background: #fff url("../img/required.png") no-repeat 98% center;
+}
+
+/***************************************
+	Results
+***************************************/
+
+.search-results div{
+	float: left;
+	padding-top: 2%;
+	padding-bottom: 2%;
+}
+
+.search-results div img {
+	max-width: 125px;
+	position: relative;
+	margin-right: 10px;
+}
+
+#result_0 {
+	width: 100%;
+	border-bottom: 1px solid #777;
+}
+
+#result_1 {
+	width: 100%;
+	border-bottom: 1px solid #777;
+}
+
+#result_2 {
+	width: 100%;
+	border-bottom: 1px solid #777;
+}
+
+#result_3 {
+	width: 100%;
+	border-bottom: 1px solid #777;
+}
+
+#result_4 {
+	width: 100%;
+	border-bottom: 1px solid #777;
+}
+
+#result_5 {
+	width: 100%;
+	border-bottom: 1px solid #777;
+}
+
+.search-results {
+	font-family: 'Dosis', sans-serif;
+}
+
+.search-results h3 {
+	border-bottom: 1px solid #777;
+	padding-bottom: 10px
+}
+
+.search-results a, .search-results a:hover {
+	color: #478FB2;
+}
+
+.search-results a:active {
+	color: #152B35;
 }
