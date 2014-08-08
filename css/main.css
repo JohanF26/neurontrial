@@ -276,7 +276,6 @@ input:required, textarea:required {
 
 .search-results div img {
 	max-width: 100px;
-	position: relative;
 	margin-right: 10px;
 }
 
@@ -325,4 +324,8 @@ input:required, textarea:required {
 
 .search-results a:active {
 	color: #152B35;
+}
+
+.book_info {
+	
 }
