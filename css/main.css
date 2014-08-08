@@ -275,7 +275,7 @@ input:required, textarea:required {
 }
 
 .search-results div img {
-	max-width: 125px;
+	max-width: 100px;
 	position: relative;
 	margin-right: 10px;
 }
