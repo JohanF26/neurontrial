@@ -270,12 +270,14 @@ input:required, textarea:required {
 
 .search-results div{
 	float: left;
-	padding-top: 2%;
-	padding-bottom: 2%;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 .search-results div img {
-	max-width: 100px;
+	float: left;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	margin-right: 10px;
 }
 
@@ -326,6 +328,213 @@ input:required, textarea:required {
 	color: #152B35;
 }
 
-.book_info {
-	
+.book_details img{
+	float: left;
+	padding-top: 5px;
+	padding-bottom: 2%;
+	margin-right: 10px;
+	max-width: 220px;
+}
+
+.details ul li {
+	list-style: disc;
+}
+
+.hasthebook div {
+	float: left;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.hasthebook div img {
+	float: left;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin-right: 10px;
+	border-radius: 100%;
+	max-width: 220px;
+}
+
+.people {
+	width: 100%;
+	border-bottom: 1px solid #777;
+}
+
+
+.rating > span:hover:before {
+   content: "\2605";
+   position: absolute;
+   color: #FFCC00;
+}
+
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  font-size: 2em;
+  width: 75%;
+}
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+   color: #FFCC00;
+}
+
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+
+.hasthebook h2 {
+	width: 100%;
+	border-bottom: 1px solid #777;
+	font-family: 'Dosis', sans-serif; 
+}
+
+
+
+/********************************************
+********************************************/
+
+
+.login_logo {
+	width: 75%;
+	position: absolute;
+	left: 12%;
+	top: 75px;
+}
+
+body.login_body {
+	background: url('../img/login-bg.jpg');
+	background-attachment: fixed;
+	background-position: center;
+	background-size: 100%;
+}
+
+.login_form h2 {
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-radius: 50px;
+	font-family: 'Dosis', sans-serif;
+	border: solid 5px #B8BCBC;
+	color: #B8BCBC;
+	text-align: center;
+}
+
+/*input {
+	float: right;
+}
+
+textarea {
+	float: right;
+}*/
+
+.login_form {
+	font-family: "Dosis", sans-serif;
+}
+
+.login_form ul {
+	width: 100%;
+	list-style-type: none;
+	list-style-position: outside;
+	margin-top: 70%;
+	margin-left: 24%;
+	padding: 0px;
+}
+
+.login_form li {
+	padding: 12px;
+	position: relative;
+}
+
+.col-xs-8 {
+	margin: 0;
+	display: inline;
+}
+
+.required_notification {
+	color: #d45252;
+	margin:5px 0 0 0;
+	display: inline;
+}
+
+.login_form label {
+	width: 90px;
+	margin-top: 3px;
+	display: inline-block;
+	float: left;
+	padding: 3px;
+	font-size: 1.5em;
+}
+
+.login_form input {
+	height: 50px;
+	width: 80%;
+	padding: 5px 8px;
+	font-size: 20px;
+	text-align: center;
+}
+
+.login_form textarea {
+	padding: 8px;
+	width: 60%;
+}
+
+
+.login_form input, .login_form textarea { 
+    border:1px solid #aaa;
+    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+    border-radius:25px;
+    padding-right: 30px;
+}
+
+.login_form input:focus, .login_form textarea:focus {
+    background: #fff; 
+    border:1px solid #555; 
+    border-radius: 25px;
+    box-shadow: 0 0 3px #aaa; 
+}
+
+a.signin {
+    background-color: #00CCCC;
+    border-radius: 25px;
+    color:white;
+    font-weight: bold;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 20px;
+}
+
+a.signin:active {
+    background-color:#008080;
+     
+}
+
+.login_form li.button {
+	margin-left: 20%;
+	margin-top: 20px;
+}
+
+a.register {
+	background-color: #CCFFFF;
+    border-radius: 25px;
+    color: #009999;
+    font-weight: bold;
+    padding: 10px 40px;
+    text-align: center;
+    font-size: 20px;
+}
+
+a.register:active {
+    background-color:#008080;
+     
+}
+
+.login_form li.register {
+	margin-left: 12.5%;
+	margin-top: 10px;
 }
