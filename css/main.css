@@ -370,7 +370,7 @@ input:required, textarea:required {
 .rating {
   unicode-bidi: bidi-override;
   direction: rtl;
-  font-size: 2em;
+  font-size: 1em;
   width: 75%;
 }
 
