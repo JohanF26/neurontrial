@@ -653,3 +653,7 @@ input:required, textarea:required {
 #profpic{
 	padding: 10px;
 }
+
+.center_logo {
+	text-align: center;
+}
