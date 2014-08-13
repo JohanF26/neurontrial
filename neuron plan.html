@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--
+	test app
+-->
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <header>
+   <a href="index.html"><img src="img/logo.png" alt="logo" id="logo" height="75px" width="150px"></a>
+   <a href="settings.html"><img src="img/settings.png" alt="settings" id="settings" height="50px" width="50px"></a>
+ </header>
+ <form class="book_form" name="book_form" action="" method="post">
+  <div class="col-xs-8">
+   <a href=""><h2>Scan Barcode</h2></a>
+   <span class="required_notification">* Denotes Required Field</span>
+
+  </div>
+
+ <div class="col-xs-12">
+
+    <ul>
+
+      <li>
+       <label for="title">Title:</label> 
+       <input type="text" name="title" required id="Title" />
+     </li>
+     <li>
+       <label for="author">Author:</label>
+       <input type="text" name="author" required id="Author" />
+     </li>
+
+     <li>
+       <label for="edition">Edition:</label>
+       <input type="text" name="edition" id="Edition">
+     </li>
+
+     <li>
+       <label for="series">Series:</label>
+       <input type="text" name="series" id="Series">
+     </li>
+
+     <li>
+       <label for="description">Description:</label>
+       <textarea type="text" name="description" cols="30" rows="6" id="Description"></textarea>
+     </li>
+
+     <li>
+       <label for="condition">Condition:</label>
+       <input type="text" name="condition" required id="Condition" />
+     </li>
+
+     <li>
+       <button class="submit" onclick="submitText();">Submit</button>
+     </li>
+
+    </ul>
+
+
+  </div>
+</form>
+<script src="js/parse-1.2.19.js"></script>
+<script>
+
+Parse.initialize("IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT", "WIQ1jk87XOqQKuQxwWBeWI08W3I7K3LC05e8VhW3");
+var Textbooks = Parse.Object.extend("Textbooks");
+var Textbook = new Textbooks();
+Textbook.save({
+  Name:"Principles of Microeconomics", 
+  Author:"N Gregory Mankiw", 
+  Edition:"6", 
+  ISBN:"9780538453042",
+  Condition:"New"
+});
+Textbook = new Textbooks();
+Textbook.save({
+  Name:"Principles of Microeconomics", 
+  Author:"N Gregory Mankiw", 
+  Edition:"6", 
+  ISBN:"9780538453042",
+  Condition:"Used"
+});
+Textbook = new Textbooks();
+Textbook.save({
+  Name:"Principles of Marketing", 
+  Author:"Gary Armstrong", 
+  Edition:"15", 
+  ISBN:"9780133084047",
+  Condition:"New"
+});
+Textbook = new Textbooks();
+Textbook.save({
+  Name:"Principles of Marketing", 
+  Author:"Gary Armstrong", 
+  Edition:"15", 
+  ISBN:"9780133084047",
+  Condition:"Used"
+});
+Textbook = new Textbooks();
+Textbook.save({
+  Name:"Publication Manual of the American Psychological Association", 
+  Author:"American Psychological Association", 
+  Edition:"6", 
+  ISBN:"9781433805615",
+  Condition:"New"
+});
+Textbook = new Textbooks();
+Textbook.save({
+  Name:"Publication Manual of the American Psychological Association", 
+  Author:"American Psychological Association", 
+  Edition:"6", 
+  ISBN:"9781433805615",
+  Condition:"Used"
+});
+Textbook = new Textbooks();
+Textbook.save({
+  Name:"The Art of Public Speaking ", 
+  Author:"Stephen Lucas", 
+  Edition:"11", 
+  ISBN:"9780073406732",
+  Condition:"New"
+});
+Textbook = new Textbooks();
+Textbook.save({
+  Name:"The Art of Public Speaking", 
+  Author:"Stephen Lucas", 
+  Edition:"11", 
+  ISBN:"9780073406732",
+  Condition:"Used"
+});
+Textbook = new Textbooks();
+Textbook.save({
+  Name:"Accounting Principles", 
+  Author:"Donald E Kieso", 
+  Edition:"11", 
+  ISBN:"9781118130032",
+  Condition:"New"
+});
+Textbook = new Textbooks();
+Textbook.save({
+  Name:"Accounting Principles", 
+  Author:"Donald E Kieso", 
+  Edition:"11", 
+  ISBN:"9781118130032",
+  Condition:"Used"
+});
+
+  var submitText = function(){
+    var Title = document.getElementById("Title").value;
+   
+    var Author = document.getElementById("Author").value;
+
+    var Edition = document.getElementById("Edition").value;
+
+    var Series = document.getElementById("Series").value;
+    
+    var Description = document.getElementById("Description").value;
+    
+    var Condition = document.getElementById("Condition").value;
+    
+    var Textbook = new Textbooks();
+
+
+    Textbook.save({
+      Name: Title,
+      Author: Author,
+      Edition: Edition,
+      Description: Description,
+      Condition: Condition
+
+    });
+  }
+
+
+</script>
+
+</body>
+</html>
