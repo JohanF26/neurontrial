@@ -38,13 +38,13 @@
 						</li>
 						
 						<li>
-							<label for="lastName">Last Name;</label>
+							<label for="lastName">Last Name:</label>
 							<input id="lastName" type="text" name="lastName" required />
 						</li>
 						
 						<li>
 							<label for="email">Email:</label>
-						 	<input id="email" type="text" name="email">
+						 	<input id="email" type="text" name="email" required>
 						</li>
 						
 						<li>
@@ -55,27 +55,27 @@
 						
 						<li>
 							<label for="username">Username:</label>
-						 	<input id="username" type="text" name="username">
+						 	<input id="username" type="text" name="username" required>
 						</li>
 
 						<li>
 							<label for="password">Password:</label>
-						 	<input id="password" type="password" name="password">
+						 	<input id="password" type="password" name="password"required >
 						</li>
 						
-						<!-- <li>
+						<li>
 							<label for="verifyPass">Verify Password:</label>
-						 	<input type="password" name="verifyPass">
+						 	<input id="cpassword" type="password" name="verifyPass">
 						</li>
 
 						<li>
 							<label for="profilePicture">Add a Pic:</label>
-						 	<input type="file" name="profilePic">
+						 	<input id="profpic" type="file" name="profilePic">
 
 						</li>
- -->
+
 						<li>
-							<button class="submit" type="Submit">Submit</button>
+							<button id="submtbtn"class="submit" type="Submit">Submeet</button>
 						</li>
 						
 
@@ -86,7 +86,7 @@
 				</div>
 			</form>
 
-<script type="text/javascript">
+ <script type="text/javascript">
 
 $("#signup_form").submit(function(event){
 	
@@ -100,6 +100,9 @@ $("#signup_form").submit(function(event){
 	var school = $("#school").val();
 	var username = $("#username").val();
 	var password = $("#password").val();
+	var password = $("#password").val();
+	// var cpassword = $("#cpassword").val();
+	var profpic = $("#profpic").val();
 
 	user.set("first name", firstName);
 	user.set("last name", lastName);
@@ -107,18 +110,23 @@ $("#signup_form").submit(function(event){
 	user.set("school", school);
 	user.set("username", username);
 	user.set("password", password);
+	// user.set("cpassword", cpassword);
+	user.set("profpic", profpic);
 	  
 	user.signUp(null, {
 	  success: function(user) {
-	    console.log("Success!")
-	  },
+	    console.log("Success!");
+	    location.href="index.html";
+    },
+
 	  error: function(user, error) {
 	    // Show the error message somewhere and let the user try again.
 	    console.log("Error: " + error.code + " " + error.message);
 	  }
 	});
 });	
-</script>
+
+ </script>
 
 
 
