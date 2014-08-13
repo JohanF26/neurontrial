@@ -490,7 +490,7 @@ textarea {
     box-shadow: 0 0 3px #aaa; 
 }
 
-a.signin {
+button.signin {
     background-color: #00CCCC;
     border-radius: 25px;
     color:white;
@@ -500,7 +500,7 @@ a.signin {
     font-size: 20px;
 }
 
-a.signin:active {
+button.signin:active {
     background-color:#008080;
      
 }
@@ -531,4 +531,125 @@ a.register:active {
 
 .buttons {
 	text-align: center;
+}
+
+/***********************************************
+***********************************************/
+.signup_form h2 {
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	border-radius: 50px;
+	font-family: 'Dosis', sans-serif;
+	border: solid 5px #B8BCBC;
+	color: #B8BCBC;
+	text-align: center;
+}
+
+/*input {
+	float: right;
+}
+
+textarea {
+	float: right;
+}*/
+
+.signup_form {
+	font-family: "Dosis", sans-serif;
+}
+
+.signup_form ul {
+	width: 100%;
+	list-style-type: none;
+	list-style-position: outside;
+	margin: 0px;
+	padding: 0px;
+}
+
+.signup_form li {
+	padding: 12px;
+	border-bottom: 1px solid #eee;
+	position: relative;
+}
+
+.signup_form li:first-child {
+	border-top: 1px solid #777;
+}
+
+.signup_form li:last-child {
+	border-bottom: 1px solid #777
+}
+
+.col-xs-8 {
+	margin: 0;
+	display: inline;
+}
+
+.required_notification {
+	color: #d45252;
+	margin:5px 0 0 0;
+	display: inline;
+}
+
+.signup_form label {
+	width: 100px;
+	margin-top: 3px;
+	display: inline-block;
+	float: left;
+	padding: 3px;
+}
+
+.signup_form input {
+	height: 20px;
+	width: 70%;
+	padding: 5px 8px;
+}
+
+.signup_form textarea {
+	padding: 8px;
+	width: 60%;
+}
+
+.signup_form a {
+	margin-left: 100px;
+}
+
+.signup_form input, .signup_form textarea { 
+    border:1px solid #aaa;
+    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+    border-radius:2px;
+    padding-right: 30px;
+}
+
+.signup_form input:focus, .signup_form textarea:focus {
+    background: #fff; 
+    border:1px solid #555; 
+    box-shadow: 0 0 3px #aaa; 
+}
+
+button.submit {
+    background-color: #68b12f;
+    border-radius: 3px;
+    color:white;
+    font-weight: bold;
+    padding: 6px 20px;
+    text-align: center;
+}
+
+button.submit:active {
+    background-color:#356b0b;
+     
+}
+
+.col-xs-8 a:active h2 {
+	background: #D4D7D7;
+}
+
+input:required, textarea:required {
+    background: #fff url("../img/required.png") no-repeat 98% center;
+}
+
+#profpic{
+	padding: 10px;
 }

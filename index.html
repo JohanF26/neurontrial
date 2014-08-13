@@ -43,7 +43,7 @@
 
 					<div class="buttons">
 						<li class="button">
-							<button class="submit" type="Submit">Sign In</button>
+							<button class="signin" type="Submit">Sign In</button>
 
 						<li class="register">
 							<a href="signup.html" class="register" type="register">New? Register!</a>
@@ -61,9 +61,13 @@
 
 		event.preventDefault();
 
+
 			var username = $("#username").val();
 			var password = $("#password").val();
-
+			if (username === "" || password === "") {
+				alert("Please fill up the fields below.");
+			}
+			else {
 			Parse.User.logIn(username, password, {
 			  success: function(user) {
 			  	console.log("success!");
@@ -73,6 +77,7 @@
 			    // The login failed. Check error to see why.
 			  }
 			});
+			}
 	}); 		
 		</script>
 
