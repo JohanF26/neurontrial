@@ -18,7 +18,7 @@ header {
 }
 
 .app-body {
-	background: url('../background.jpg');
+	background: url('../img/background.jpg');
 	margin-top: -10px;
 	background-size: 100%;
 	padding-bottom: 100%;
@@ -261,7 +261,7 @@ a.submit:active {
 }
 
 input:required, textarea:required {
-    background: #fff url("../required.png") no-repeat 98% center;
+    background: #fff url("../img/required.png") no-repeat 98% center;
 }
 
 /***************************************
@@ -407,7 +407,7 @@ input:required, textarea:required {
 }
 
 body.login_body {
-	background: url('../login-bg.jpg');
+	background: url('../img/login-bg.jpg');
 	background-attachment: fixed;
 	background-position: center;
 	background-size: 100%;
