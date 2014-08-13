@@ -4,92 +4,92 @@
 -->
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="css/normalize.css">
-		<link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/bootstrap-theme.min.css">
-		<link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="css/responsive.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<script src="js/parse-1.2.19.js"></script>
-		<script src="js/jquery-1.11.1.js"></script>
-		<script type="text/javascript">
-			Parse.initialize("IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT", "WIQ1jk87XOqQKuQxwWBeWI08W3I7K3LC05e8VhW3");
-		</script>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/responsive.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="js/parse-1.2.19.js"></script>
+	<script src="js/jquery-1.11.1.js"></script>
+	<script type="text/javascript">
+	Parse.initialize("IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT", "WIQ1jk87XOqQKuQxwWBeWI08W3I7K3LC05e8VhW3");
+	</script>
 
-	</head>
+</head>
 
-	<body>
-		<header>
-			<a href="index.html"><img src="img/logo.png" alt="logo" id="logo" height="75px" width="150px"></a>
-			
-		</header>
-			<form id="signup_form" class="signup_form" name="signup_form" action="#" method="post">
-					<div class="col-xs-12">
-						
-						<ul>
-									
-						<li>
-							<label for="firstName">First Name:</label> 
-							<input id="firstName" type="text" name="firstName" required />
-						</li>
-						
-						<li>
-							<label for="lastName">Last Name:</label>
-							<input id="lastName" type="text" name="lastName" required />
-						</li>
-						
-						<li>
-							<label for="email">Email:</label>
-						 	<input id="email" type="text" name="email" required>
-						</li>
-						
+<body>
+	<header>
+		<a href="index.html"><img src="img/logo.png" alt="logo" id="logo" height="75px" width="150px"></a>
 
-						<li>
-							<label for="school">School:</label>
-							<select id="school" name="colleges" required>
-								<option value="New York University">New York University</option>
-								<option value="LIU Brooklyn">LIU Brooklyn</option>
-								<option value="Barnard College">Barnard College</option>
-								<option value="Columbia University">Columbia University</option>
-								<option value="Manhattan College">Manhattan College</option>
-								<option value="Fordham University">Fordham University</option>
-								<option value="The New School">The New School</option>
-								<option value="Pace University">Pace University</option>
-								<option value="Yeshiva University">Yeshiva University</option>
-								<option value="The Rockefeller University">The Rockefeller University</option>
-								<option value="School of Visual Arts">School of Visual Arts</option>
-								<option value="St. John's University">St. John's University</option>
-								<option value="Hunter College, CUNY">Hunter College, CUNY</option>
-								<option value="The Juilliard School">The Juilliard School</option>
-								<option value="Wagner College">Wagner College</option>
-								<option value="College of Staten Island">College of Staten Island</option>
-								<option value="Adelphi University">Adelphi University</option>
-							</select>
-						</li>
-						
-						<li>
-							<label for="username">Username:</label>
-						 	<input id="username" type="text" name="username" required>
-						</li>
+	</header>
+	<form id="signup_form" class="signup_form" name="signup_form" action="#" method="post">
+		<div class="col-xs-12">
 
-						<li>
-							<label for="password">Password:</label>
-						 	<input id="password" type="password" name="password"required >
-						</li>
+			<ul>
 
-						<li>
-							<form id="fileupload" name="fileupload" enctype="multipart/form-data" method="post">
-							  <fieldset>
-							    <input type="file" name="fileselect" id="fileselect"></input>
-							    <input id="uploadbutton" type="button" value="Upload to Parse"/>
-							  </fieldset>
-							</form>
+				<li>
+					<label for="firstName">First Name:</label> 
+					<input id="firstName" type="text" name="firstName" required />
+				</li>
 
-						</li>
-						
+				<li>
+					<label for="lastName">Last Name:</label>
+					<input id="lastName" type="text" name="lastName" required />
+				</li>
+
+				<li>
+					<label for="email">Email:</label>
+					<input id="email" type="text" name="email" required>
+				</li>
+
+
+				<li>
+					<label for="school">School:</label>
+					<select id="school" name="colleges" required>
+						<option value="New York University">New York University</option>
+						<option value="LIU Brooklyn">LIU Brooklyn</option>
+						<option value="Barnard College">Barnard College</option>
+						<option value="Columbia University">Columbia University</option>
+						<option value="Manhattan College">Manhattan College</option>
+						<option value="Fordham University">Fordham University</option>
+						<option value="The New School">The New School</option>
+						<option value="Pace University">Pace University</option>
+						<option value="Yeshiva University">Yeshiva University</option>
+						<option value="The Rockefeller University">The Rockefeller University</option>
+						<option value="School of Visual Arts">School of Visual Arts</option>
+						<option value="St. John's University">St. John's University</option>
+						<option value="Hunter College, CUNY">Hunter College, CUNY</option>
+						<option value="The Juilliard School">The Juilliard School</option>
+						<option value="Wagner College">Wagner College</option>
+						<option value="College of Staten Island">College of Staten Island</option>
+						<option value="Adelphi University">Adelphi University</option>
+					</select>
+				</li>
+
+				<li>
+					<label for="username">Username:</label>
+					<input id="username" type="text" name="username" required>
+				</li>
+
+				<li>
+					<label for="password">Password:</label>
+					<input id="password" type="password" name="password"required >
+				</li>
+
+				<!-- <li>
+					<form id="fileupload" name="fileupload" enctype="multipart/form-data" method="post">
+						<fieldset>
+							<input type="file" name="fileselect" id="fileselect"></input>
+							<input id="uploadbutton" type="button" value="Upload to Parse"/>
+						</fieldset>
+					</form>
+
+				</li> -->
+
 						<!-- <li>
 							<label for="verifyPass">Verify Password:</label>
 							<label for="verifyPass">Verify Pass:</label>
@@ -101,107 +101,105 @@
 							<label for="profilePicture">Add a Pic:</label>
 						 	<input id="profpic" type="file" name="profilePic">
 
-						</li> -->
-						 	<!-- <input id="profpic" type="file" accept="image/*" capture="camera" name="profilePic"> -->
-						 	<input id="profpic"type="file"></input>
-						
-
-						<li>
-							<button id="submtbtn"class="submit" type="Submit">Submeet</button>
-						</li>
-						
-
-						</ul>
-					
+						 </li> -->
+						 <!-- <input id="profpic" type="file" accept="image/*" capture="camera" name="profilePic"> -->
+						 <!-- <input id="profpic"type="file"></input> -->
 
 
-				</div>
-			</form>
+				 <li>
+				 	<button id="submtbtn"class="submit" type="Submit">Submeet</button>
+				 </li>
 
- <script type="text/javascript">
+
+			</ul>
 
 
 
-$("#signup_form").submit(function(event){
-	
-	event.preventDefault();
+		</div>
+	</form>
 
-	var user = new Parse.User();
-
-	var firstName = $("#firstName").val();
-	var lastName = $("#lastName").val();
-	var email = $("#email").val();
-	var school = $("#school").val();
-	var username = $("#username").val();
-	var password = $("#password").val();
-	var password = $("#password").val();
-	// var cpassword = $("#cpassword").val();
-	// var profpic = $("#profpic").val();
-
-	user.set("firstName", firstName);
-	user.set("lastName", lastName);
-	user.set("email", email);
-	user.set("school", school);
-	user.set("username", username);
-	user.set("password", password);
-	// user.set("cpassword", cpassword);
-	// user.set("profpic", profpic);
-	  
-	user.signUp(null, {
-	  success: function(user) {
-	    console.log("Success!");
-	    location.href="index.html";
-    },
-
-	  error: function(user, error) {
-	    // Show the error message somewhere and let the user try again.
-	    console.log("Error: " + error.code + " " + error.message);
-	  }
-	});
-
-	$(function() {
-    var file;
-
-    
-    $('#fileselect').bind("change", function(e) {
-      var files = e.target.files || e.dataTransfer.files;
-      
-      file = files[0];
-    });
-
-    
-    $('#uploadbutton').click(function() {
-      var serverUrl = 'https://api.parse.com/1/files/' + file.name;
-
-      $.ajax({
-        type: "POST",
-        beforeSend: function(request) {
-          request.setRequestHeader("X-Parse-Application-Id", 'IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT');
-          request.setRequestHeader("X-Parse-REST-API-Key",'PA0jgRV2Lyx3eTEuash2MkdGdblCJIycVaDGOFaE');
-          request.setRequestHeader("Content-Type", file.type);
-        },
-        url: serverUrl,
-        data: file,
-        processData: false,
-        contentType: false,
-        success: function(data) {
-          alert("File available at: " + data.url);
-        },
-        error: function(data) {
-          var obj = jQuery.parseJSON(data);
-          alert(obj.error);
-        }
-      });
-    });
+	<script type="text/javascript">
 
 
-  });
-});	
 
- </script>
+		$("#signup_form").submit(function(event){
+
+			event.preventDefault();
+
+			var user = new Parse.User();
+
+			var firstName = $("#firstName").val();
+			var lastName = $("#lastName").val();
+			var email = $("#email").val();
+			var school = $("#school").val();
+			var username = $("#username").val();
+			var password = $("#password").val();
+			var password = $("#password").val();
+			// var cpassword = $("#cpassword").val();
+			// var profpic = $("#profpic").val();
+
+			user.set("firstName", firstName);
+			user.set("lastName", lastName);
+			user.set("email", email);
+			user.set("school", school);
+			user.set("username", username);
+			user.set("password", password);
+			// user.set("cpassword", cpassword);
+			// user.set("profpic", profpic);
+
+			user.signUp(null, {
+				success: function(user) {
+					console.log("Success!");
+					location.href="index.html";
+				},
+
+				error: function(user, error) {
+			    // Show the error message somewhere and let the user try again.
+			    console.log("Error: " + error.code + " " + error.message);
+			}
+		});
+
+		// $(function() {
+		// 	var file;
+
+		// 	$('#fileselect').bind("change", function(e) {
+		// 		var files = e.target.files || e.dataTransfer.files;
+
+		// 		file = files[0];
+		// 	});
+
+
+		// 	$('#submit').click(function() {
+		// 		var serverUrl = 'https://api.parse.com/1/files/' + file.name;
+
+		// 		$.ajax({
+		// 			type: "POST",
+		// 			beforeSend: function(request) {
+		// 				request.setRequestHeader("X-Parse-Application-Id", 'IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT');
+		// 				request.setRequestHeader("X-Parse-REST-API-Key",'PA0jgRV2Lyx3eTEuash2MkdGdblCJIycVaDGOFaE');
+		// 				request.setRequestHeader("Content-Type", file.type);
+		// 			},
+		// 			url: serverUrl,
+		// 			data: file,
+		// 			processData: false,
+		// 			contentType: false,
+		// 			success: function(data) {
+		// 				alert("File available at: " + data.url);
+		// 			},
+		// 			error: function(data) {
+		// 				var obj = jQuery.parseJSON(data);
+		// 				alert(obj.error);
+		// 			}
+		// 		});
+		// 	});
+
+
+		});
+
+	</script>
 
 
 
 
-	</body>
+</body>
 </html>
