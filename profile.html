@@ -13,6 +13,11 @@
 		<link rel="stylesheet" href="css/main.css">
 		<link rel="stylesheet" href="css/responsive.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="js/parse-1.2.19.js"></script>
+		<script src="js/jquery-1.11.1.js"></script>
+		<script type="text/javascript">
+			Parse.initialize("IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT", "WIQ1jk87XOqQKuQxwWBeWI08W3I7K3LC05e8VhW3");
+		</script>
 	</head>
 
 	<body>
@@ -23,13 +28,13 @@
 			
 
 		 <div class="app-body" align="center">
-			 	<img src="img/Ron.jpg" alt"profile-pic" height="150px" width="150px" id="profile-pic">
+			 	<!-- <img src="#" alt"profile-pic" height="150px" width="150px" id="profile-pic"> -->
 			 	<div class="info">
-				 	<p class="name" align="center">
-				 		Ron Summers
+				 	<p id="username" class="name" align="center">
+				 		<!-- the username wil go here -->
 				 	</p>
-				 	<p class="major" align="center">
-				 		Biochemistry
+				 	<p id="college" class="major" align="center">
+				 		<!-- the college will go here -->
 				 	</p>
 			 	</div>
 		
@@ -46,6 +51,16 @@
 			 	</div>
 		 	</div>
 		 
+		 <script type="text/javascript">
+		 
+		 var currentUser = Parse.User.current();
+
+		 console.log(currentUser)
+		 $('#username').text(currentUser.attributes.firstName + " " + currentUser.attributes.lastName );
+
+		 $('#college').text(currentUser.attributes.school);
+
+		 </script>
 
 		 </div>
 	</body>

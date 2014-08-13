@@ -70,11 +70,6 @@
 								<option value="Adelphi University">Adelphi University</option>
 							</select>
 						</li>
-						<!-- <li>
-							<label for="school">School:</label>
-						 	<input id="school" type="text" name="school">
-						</li> -->
-						
 						
 						<li>
 							<label for="username">Username:</label>
@@ -85,8 +80,18 @@
 							<label for="password">Password:</label>
 						 	<input id="password" type="password" name="password"required >
 						</li>
-						
+
 						<li>
+							<form id="fileupload" name="fileupload" enctype="multipart/form-data" method="post">
+							  <fieldset>
+							    <input type="file" name="fileselect" id="fileselect"></input>
+							    <input id="uploadbutton" type="button" value="Upload to Parse"/>
+							  </fieldset>
+							</form>
+
+						</li>
+						
+						<!-- <li>
 							<label for="verifyPass">Verify Password:</label>
 						 	<input id="cpassword" type="password" name="verifyPass">
 						</li>
@@ -95,7 +100,7 @@
 							<label for="profilePicture">Add a Pic:</label>
 						 	<input id="profpic" type="file" name="profilePic">
 
-						</li>
+						</li> -->
 
 						<li>
 							<button id="submtbtn"class="submit" type="Submit">Submeet</button>
@@ -111,6 +116,8 @@
 
  <script type="text/javascript">
 
+
+
 $("#signup_form").submit(function(event){
 	
 	event.preventDefault();
@@ -125,16 +132,16 @@ $("#signup_form").submit(function(event){
 	var password = $("#password").val();
 	var password = $("#password").val();
 	// var cpassword = $("#cpassword").val();
-	var profpic = $("#profpic").val();
+	// var profpic = $("#profpic").val();
 
-	user.set("first name", firstName);
-	user.set("last name", lastName);
+	user.set("firstName", firstName);
+	user.set("lastName", lastName);
 	user.set("email", email);
 	user.set("school", school);
 	user.set("username", username);
 	user.set("password", password);
 	// user.set("cpassword", cpassword);
-	user.set("profpic", profpic);
+	// user.set("profpic", profpic);
 	  
 	user.signUp(null, {
 	  success: function(user) {
@@ -147,6 +154,44 @@ $("#signup_form").submit(function(event){
 	    console.log("Error: " + error.code + " " + error.message);
 	  }
 	});
+
+	$(function() {
+    var file;
+
+    
+    $('#fileselect').bind("change", function(e) {
+      var files = e.target.files || e.dataTransfer.files;
+      
+      file = files[0];
+    });
+
+    
+    $('#uploadbutton').click(function() {
+      var serverUrl = 'https://api.parse.com/1/files/' + file.name;
+
+      $.ajax({
+        type: "POST",
+        beforeSend: function(request) {
+          request.setRequestHeader("X-Parse-Application-Id", 'IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT');
+          request.setRequestHeader("X-Parse-REST-API-Key",'PA0jgRV2Lyx3eTEuash2MkdGdblCJIycVaDGOFaE');
+          request.setRequestHeader("Content-Type", file.type);
+        },
+        url: serverUrl,
+        data: file,
+        processData: false,
+        contentType: false,
+        success: function(data) {
+          alert("File available at: " + data.url);
+        },
+        error: function(data) {
+          var obj = jQuery.parseJSON(data);
+          alert(obj.error);
+        }
+      });
+    });
+
+
+  });
 });	
 
  </script>

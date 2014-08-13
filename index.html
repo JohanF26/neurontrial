@@ -34,11 +34,11 @@
 				<ul>
 							
 					<li>
-						<input id="username" type="text" name="title" placeholder="username" />
+						<input id="username" type="text" name="title" placeholder="username" required/>
 					</li>
 					
 					<li>
-						<input id="password" type="password" name="author" placeholder="password"/>
+						<input id="password" type="password" name="author" placeholder="password" required/>
 					</li>
 
 					<div class="buttons">
@@ -56,6 +56,19 @@
 		</form>	
 	
 		<script type="text/javascript">
+
+		// var verify = function(eyedee) {
+		// 	var field = document.getElementById('eyedee');
+
+		// 		if (field.value == "") {
+		// 		    document.getElementById('eyedee').style.border = "solid 1px red";
+		// 		    alert("Dafuq!")
+		// 		    return false;
+		// 		}	
+		// };
+
+		// verify('username');
+		// verify('password');
 
 	$("#signin").submit(function(event){
 

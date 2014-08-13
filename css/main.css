@@ -24,6 +24,7 @@ header {
 	padding-bottom: 100%;
 	background-position: absolute;
 	height: 600px;
+	padding-top: 50px;
 }
 
 #settings {
@@ -42,20 +43,23 @@ header {
 	margin-top: 10px;
 }
 
-.info {
-	float: center;
-	margin: 0 auto;
-	font-size: 20px;
-
-}
-
-#major {
-	float: center;
-}
 
 .info p {
 	font-weight: bold;
-	color: #fff
+	color: #fff;
+	float: center;
+}
+
+.info {
+	float: center;
+	margin: 0 auto;
+	font-size: 50px;
+
+}
+
+.major {
+	float: center;
+	font-size: 50px;
 }
 
 .nav {
