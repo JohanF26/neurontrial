@@ -225,7 +225,32 @@
 
 				error: function(user, error) {
 			    // Show the error message somewhere and let the user try again.
-			    alert("Error: " + error.code + " " + error.message);
+			    // alert("Error: " + error.code + " " + error.message);
+			    // console.log(error.code)
+
+			    // function Error (){
+			    // 	return error.code === 125
+			    // }
+
+			    // console.log(Error())
+
+			    if (error.code === 202) {
+			    	console.log("username is taken");
+			    	}
+			    
+			    else if (error.code === 203){
+			    	console.log("email is taken");
+			    	}
+
+			    else if (error.code === 125) {
+			    	console.log("email is invalid");
+			    }
+
+			    else {
+			    	console.log("WTF is going on??")
+			    }
+
+
 				}
 		    
 		    });
