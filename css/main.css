@@ -639,6 +639,7 @@ button.submit {
     font-weight: bold;
     padding: 6px 20px;
     text-align: center;
+ 	position: center
 }
 
 button.submit:active {
