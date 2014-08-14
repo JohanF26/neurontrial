@@ -18,7 +18,7 @@ header {
 }
 
 .app-body {
-	background: url('../img/background.jpg');
+	background: url('../img/background0.jpg');
 	margin-top: -10px;
 	background-size: 100%;
 	padding-bottom: 100%;
@@ -191,9 +191,9 @@ textarea {
 	position: relative;
 }
 
-.book_form li:first-child {
+/*.book_form li:first-child {
 	border-top: 1px solid #777;
-}
+}*/
 
 .book_form li:last-child {
 	border-bottom: 1px solid #777
@@ -586,7 +586,7 @@ textarea {
 }
 
 .col-xs-8 {
-	margin: 0;
+	margin-top: -30px;
 	display: inline;
 }
 
@@ -656,4 +656,67 @@ input:required, textarea:required {
 
 #profpic{
 	padding: 10px;
+}
+
+.notifications button.yes {
+	border-radius: 10%;
+	background-size: 65px;
+	background-position: center;
+	margin-right: 20px;
+	background: #00CCCC;
+	color: #fff;
+	padding: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 20px;
+	width: 42%;
+}
+
+.notifications button.no {
+	border-radius: 10%;
+	background-size: 65px;
+	background-position: center;
+	margin-right: 20px;
+	background: #fff;
+	color: #00B8B8;
+	padding: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 20px;
+	width: 42%;
+}
+
+.notifications {
+	padding: 20px;
+	padding-top: 10px;
+	padding-bottom: 40px;
+	margin-top: 10px;
+	font-family: "Dosis", sans-serif;
+	font-size: 1.3em;
+	font-weight: bold;
+	border-bottom: #D1E3E3 solid 1px;
+}
+
+.notifications button {
+	float: right;
+	margin-top: -10px;
+}
+
+div.yes-no {
+	text-align: center;
+}
+
+body.ntf-body {
+	background: #F5F5F5;
+}
+
+.pagetitle h2 {
+	font-family: "Dosis", sans-serif;
+	border-bottom: #D1E3E3 solid 1px;
+	color: #A7B6B6;
+	padding-bottom: 10px;
+}
+
+div#sidr ul li button {
+	
 }
