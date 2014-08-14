@@ -16,8 +16,8 @@
 	<script src="js/parse-1.2.19.js"></script>
 	<script src="js/jquery-1.11.1.js"></script>
 	<script type="text/javascript">
-	Parse.initialize("IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT", "WIQ1jk87XOqQKuQxwWBeWI08W3I7K3LC05e8VhW3");
-	</script>
+	// Parse.initialize("IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT", "WIQ1jk87XOqQKuQxwWBeWI08W3I7K3LC05e8VhW3");
+	// </script>
 
 </head>
 
@@ -79,6 +79,7 @@
 				<li>
 					<label for="password">Password:</label>
 					<input id="password" type="password" name="password"required >
+					<span>Password Must Be Atleast 8 Character</span>
 				</li>
 
 				<!-- <li>
@@ -91,14 +92,15 @@
 
 				</li> -->
 
-						<!-- <li>
-							<label for="verifyPass">Verify Password:</label>
+						<li>
 							<label for="verifyPass">Verify Pass:</label>
-
-						 	<input id="cpassword" type="password" name="verifyPass">
+							<input id="cpassword" type="password" name="verifyPass">
+							<span>Password Do Not Match</span>
 						</li>
 
 						
+						<!-- <li>
+
 							<label for="profilePicture">Add a Pic:</label>
 						 	<input id="profpic" type="file" name="profilePic">
 
@@ -108,7 +110,7 @@
 
 
 				 <li>
-				 	<button id="submtbtn"class="submit" type="Submit">Submit</button>
+				 	<button id="submtbtn" class="submit" type="Submit" disabled> Submit </button>
 				 </li>
 
 
@@ -121,6 +123,73 @@
 
 	<script type="text/javascript">
 
+		$("form span").hide();
+
+		var $password = $("#password");
+		var $cpassword = $("#cpassword");
+
+		function isPasswordValid() {
+			return $password.val().length > 7;
+		}
+
+		function arePasswordsMatching() {
+			return $password.val() === $cpassword.val();
+		}
+
+		function canSubmit() {
+			return isPasswordValid() && arePasswordsMatching();
+		}
+
+		$password.css({'background-color' : '#ffffff' })
+
+		function passwordLength () {
+
+			if (isPasswordValid()) {
+
+				$password.next().hide();
+				$password.css({'background-color' : '#A3FF47' });
+			}
+
+			else {
+
+				$password.next().show();
+				$password.css({'background-color' : '#ffffff' });
+			}
+
+		}
+
+		function confirmPassword () {
+
+			if ( arePasswordsMatching() ) {
+
+				$cpassword.next().hide();
+				$cpassword.css({'background-color' : '#A3FF47' });
+			}
+
+			else {
+
+				$cpassword.next().show();
+				$cpassword.css({'background-color' : '#3399FF' });
+			}
+
+		}
+
+
+		function enableSubmitEvent(){
+			$('#submtbtn').prop("disabled", !canSubmit());	
+		}
+
+		$password.focus(passwordLength).keyup(passwordLength).keyup(confirmPassword).keyup(enableSubmitEvent);
+		
+		$cpassword.focus(confirmPassword).keyup(confirmPassword).keyup(enableSubmitEvent);
+
+		enableSubmitEvent();
+
+
+// ***************************************************************
+
+// This is all the Parse code which stores the information to the cloud
+		Parse.initialize("IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT", "WIQ1jk87XOqQKuQxwWBeWI08W3I7K3LC05e8VhW3");
 
 
 		$("#signup_form").submit(function(event){
@@ -156,46 +225,13 @@
 
 				error: function(user, error) {
 			    // Show the error message somewhere and let the user try again.
-			    console.log("Error: " + error.code + " " + error.message);
-			}
-		});
-
-		// $(function() {
-		// 	var file;
-
-		// 	$('#fileselect').bind("change", function(e) {
-		// 		var files = e.target.files || e.dataTransfer.files;
-
-		// 		file = files[0];
-		// 	});
+			    alert("Error: " + error.code + " " + error.message);
+				}
+		    
+		    });
 
 
-		// 	$('#submit').click(function() {
-		// 		var serverUrl = 'https://api.parse.com/1/files/' + file.name;
-
-		// 		$.ajax({
-		// 			type: "POST",
-		// 			beforeSend: function(request) {
-		// 				request.setRequestHeader("X-Parse-Application-Id", 'IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT');
-		// 				request.setRequestHeader("X-Parse-REST-API-Key",'PA0jgRV2Lyx3eTEuash2MkdGdblCJIycVaDGOFaE');
-		// 				request.setRequestHeader("Content-Type", file.type);
-		// 			},
-		// 			url: serverUrl,
-		// 			data: file,
-		// 			processData: false,
-		// 			contentType: false,
-		// 			success: function(data) {
-		// 				alert("File available at: " + data.url);
-		// 			},
-		// 			error: function(data) {
-		// 				var obj = jQuery.parseJSON(data);
-		// 				alert(obj.error);
-		// 			}
-		// 		});
-		// 	});
-
-
-		});
+	});
 
 	</script>
 
