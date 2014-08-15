@@ -42,6 +42,7 @@
 			</script>
 		</header>
 		
+		<div id="theForm">
 		<div class="col-xs-12">
 		<div class="pagetitle">
 		<h2>Find a Book</h2>
@@ -75,12 +76,23 @@
 					</li>
 
 				</ul>
-			</div>
+		</div>
+
+				<div id="results">
+					<h1 id="bookName">txt</h1>
+					<p id="author">txt</p>
+					<p id="conditon">txt</p>
+				</div>
 
 		</form>	
+	</div>
+
 		<script src="js/jquery.sidr.min.js"></script>
 		<script type="text/javascript">
 			Parse.initialize("IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT", "WIQ1jk87XOqQKuQxwWBeWI08W3I7K3LC05e8VhW3");
+
+
+
 
 			$("#bookform").submit(function(event){
 
@@ -88,27 +100,34 @@
 
 				var AddBook = Parse.Object.extend("AddBook");
 
-				var title = $("#title").val();
-				var author = $("#author").val();
-				var isbn = $("isbn").val();
-
+					var title = $("#title").val();
+					var author = $("#author").val();
+					var isbn = $("isbn").val();
+				
 				var query = new Parse.Query(AddBook);
 
 				query.startsWith("title", title);
 
 				query.find({
   					success: function(results) {
-    				console.log("Successfully retrieved " + results.length + " books");
-    				$("#col-xs-12").clear();
-    				$("").add
-    				//for loop
+	    				console.log("Successfully retrieved " + results.length + " books");
+	    				$("#theForm").remove();
+						
+						 // Do something with the returned Parse.Object values
+					    for (var i = 0; i < results.length; i++) { 
+					      var object = results[i];
 
-				    // Do something with the returned Parse.Object values
-				    // for (var i = 0; i < results.length; i++) { 
-				    //   var object = results[i];
-				    //   alert(object.id + ' - ' + object.get('playerName'));
-				    //}
-    				},
+					      var Title = object.get('title');
+					      console.log(object.get('owner'));
+					      console.log(object.get('author'));
+					      console.log(object.get('condition'));
+					      console.log(Title);
+
+					      // console.log($("#results").());
+						}
+    				
+    				}, //this closes success
+
 				  error: function(error) {
 				    alert("Error: " + error.code + " " + error.message);
 				  }
