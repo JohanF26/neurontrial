@@ -236,6 +236,7 @@
 
 			    if (error.code === 202) {
 			    	console.log("username is taken");
+			    	$("#email").val("This username is taken :(")
 			    	}
 			    
 			    else if (error.code === 203){
@@ -244,6 +245,7 @@
 
 			    else if (error.code === 125) {
 			    	console.log("email is invalid");
+			    	$("#email").attr("placeholder", "This email is invalid :(")
 			    }
 
 			    else {

@@ -42,59 +42,84 @@
 			</script>
 		</header>
 		
-		<div id="theForm">
+		<div id="theForms">
 		<div class="col-xs-12">
 		<div class="pagetitle">
 		<h2>Find a Book</h2>
 		</div>
 		</div>
-		
-		<form id="bookform" class="book_form" name="book_form" action="" method="post">
-		
+<!-- Search By Title -->
+		<form id="Titleform" class="book_form" name="book_form" action="" method="post">
 			<div class="col-xs-12">
-
-				<ul>
-							
+				<ul>							
 					<li>
 						<label for="title">Title:</label> 
 						<input id="title" type="text" name="title" />
 					</li>
 					
 					<li>
+							<button id="submitbtnTitle"class="submit" type="Submit">Search by Title</button>
+					</li>
+				</ul>
+			</div>
+		</form>	
+<!-- Search By Author -->
+		<form id="Authorform" class="book_form" name="book_form" action="" method="post">
+			<div class="col-xs-12">
+				<ul>							
+					<li>
 						<label for="author">Author:</label>
 						<input id="author" type="text" name="author" />
 					</li>
-
+					
 					<li>
-						<label for="isbnnmbr">ISBN Number:</label>
+							<button id="submitbtnAuthor"class="submit" type="Submit">Search by Author</button>
+					</li>
+				</ul>
+			</div>
+		</form>	
+<!-- Search By ISBN -->
+		<form id="Isbnform" class="book_form" name="book_form" action="" method="post">
+			<div class="col-xs-12">
+				<ul>							
+					<li>
+						<label for="Isbnnmbr">ISBN Number:</label>
 						<input id="isbn" type="text" name="ispncode" />
 					</li>
-
+					
 					<li>
-							<button id="submitbtn"class="submit" type="Submit">Submit</button>
-							<!-- <a href="yourbooks.html" class="submit" type="Submit">Submit</a> -->
+							<button id="submitbtnIsbn"class="submit" type="Submit">Search by ISBN Number</button>
 					</li>
-
 				</ul>
-		</div>
+			</div>
+		</form>	
+<!-- End of all Search Options, The div below is to clear the page upon the submission of either form -->
+	</div>
 
+<!-- This is the "result box" with info for every entry-->
+				
 				<div id="results">
 					<h1 id="bookName">txt</h1>
 					<p id="author">txt</p>
-					<p id="conditon">txt</p>
+					<p id="condition">txt</p>
 				</div>
 
-		</form>	
-	</div>
+
+				<!--  ***********************START OF JAVASCRIPT***********************  -->
+				<!--  ***********************START OF JAVASCRIPT***********************  -->
+				<!--  ***********************START OF JAVASCRIPT***********************  -->
+				<!--  ***********************START OF JAVASCRIPT***********************  -->
 
 		<script src="js/jquery.sidr.min.js"></script>
 		<script type="text/javascript">
 			Parse.initialize("IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT", "WIQ1jk87XOqQKuQxwWBeWI08W3I7K3LC05e8VhW3");
 
+			$(document).ready(function(){
+				$("#results").hide();
+				});
 
 
-
-			$("#bookform").submit(function(event){
+			$("#Titleform").submit(function(event){
 
 				event.preventDefault();
 
@@ -111,20 +136,29 @@
 				query.find({
   					success: function(results) {
 	    				console.log("Successfully retrieved " + results.length + " books");
-	    				$("#theForm").remove();
+	    				$(".col-xs-12").remove();
 						
 						 // Do something with the returned Parse.Object values
 					    for (var i = 0; i < results.length; i++) { 
 					      var object = results[i];
 
 					      var Title = object.get('title');
+					      var Author = object.get('author');
+					      var Condition = object.get('condition');
+
 					      console.log(object.get('owner'));
-					      console.log(object.get('author'));
-					      console.log(object.get('condition'));
+					      console.log(Author);
+					      console.log(Condition);
 					      console.log(Title);
 
-					      // console.log($("#results").());
-						}
+					      // This is the magical code which creates a new entry everytime a result comes up!!
+					      $("#results").clone().appendTo("body");
+					      $("#results").show();
+					      $('#bookName').text(Title);
+					      $('#author').text(Author);
+					      $('#condition').text(Condition);			
+
+					    }
     				
     				}, //this closes success
 
