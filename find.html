@@ -128,12 +128,12 @@
 					var title = $("#title").val();
 					var author = $("#author").val();
 					var isbn = $("isbn").val();
-				
-				var query = new Parse.Query(AddBook);
+// This is for search by Title
+				var titleQuery = new Parse.Query(AddBook);
 
-				query.startsWith("title", title);
+				titleQuery.startsWith("title", title);
 
-				query.find({
+				titleQuery.find({
   					success: function(results) {
 	    				console.log("Successfully retrieved " + results.length + " books");
 	    				$(".col-xs-12").remove();
@@ -167,6 +167,8 @@
 				  }
 				});
 			});
+// This is for Search by Author
+			
 
 </script>
 
