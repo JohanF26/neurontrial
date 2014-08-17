@@ -104,7 +104,6 @@
 					<p id="condition">txt</p>
 				</div>
 
-
 				<!--  ***********************START OF JAVASCRIPT***********************  -->
 				<!--  ***********************START OF JAVASCRIPT***********************  -->
 				<!--  ***********************START OF JAVASCRIPT***********************  -->
@@ -118,20 +117,20 @@
 				$("#results").hide();
 				});
 
-
+// This is for search by Title
 			$("#Titleform").submit(function(event){
 
 				event.preventDefault();
 
 				var AddBook = Parse.Object.extend("AddBook");
 
-					var title = $("#title").val();
+					var title = $("#title").val().toLowerCase();
 					var author = $("#author").val();
 					var isbn = $("isbn").val();
-// This is for search by Title
+
 				var titleQuery = new Parse.Query(AddBook);
 
-				titleQuery.startsWith("title", title);
+				titleQuery.startsWith("searchTitle", title);
 
 				titleQuery.find({
   					success: function(results) {
@@ -145,6 +144,7 @@
 					      var Title = object.get('title');
 					      var Author = object.get('author');
 					      var Condition = object.get('condition');
+					      var Edition = object.get('edition'); 
 
 					      console.log(object.get('owner'));
 					      console.log(Author);
@@ -154,9 +154,9 @@
 					      // This is the magical code which creates a new entry everytime a result comes up!!
 					      $("#results").clone().appendTo("body");
 					      $("#results").show();
-					      $('#bookName').text(Title);
-					      $('#author').text(Author);
-					      $('#condition').text(Condition);			
+					      $('#bookName').text(Title + "(Edition No."+ Edition + ")");
+					      $('#author').text("By: " + Author);
+					      $('#condition').text("Condition: " + Condition);			
 
 					    }
     				
@@ -169,7 +169,6 @@
 			});
 // This is for Search by Author
 			
-
 </script>
 
 
