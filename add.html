@@ -73,7 +73,8 @@
 						
 						<li>
 							<label  for="edition">Edition:</label>
-						 	<input id="edition" type="text" name="edition" required>
+						 	<input id="edition" type="number" name="quantity"placeholder="enter edition number" style="height: 30px"
+						 	min="1">
 						</li>
 						
 						<li>
@@ -120,16 +121,21 @@ $("#book_form").submit(function(event){
 
 		var newBook = new AddBook();
 
+
 		var title = $("#title").val();
+		var searchTitle = $("#title").val().toLowerCase();
 		var author = $("#author").val();
-		var edition = $("edition").val();
+		var searchAuthor = $("#author").val().toLowerCase();
+		var edition = $("#edition").val();
 		var isbn = $("#isbn").val();
 		var description = $("#description").val();
 		var condition = $("#condition").val();
 		var currentUser = Parse.User.current();
 
 		newBook.set("title", title);
+		newBook.set("searchTitle", searchTitle);
 		newBook.set("author", author);
+		newBook.set("searchAuthor", searchAuthor);
 		newBook.set("edition", edition);
 		newBook.set("isbn", isbn);
 		newBook.set("description", description);
@@ -140,7 +146,7 @@ $("#book_form").submit(function(event){
   success: function(newBook) {
     // Execute any logic that should take place after the object is saved.
     console.log("Success");
-    location.href="booklist.html";
+    location.href="#";
   },
   error: function(newBook, error) {
     // Execute any logic that should take place if the save fails.
