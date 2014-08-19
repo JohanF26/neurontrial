@@ -23,7 +23,7 @@
 
 	</head>
 
-	<body>
+	<body class="booklist-body">
 		<header>
 			<a href="profile.html"><img src="img/logo.png" alt="logo" id="logo" height="75px" width="150px"></a>
 			<a id="simple-menu" href="#sidr"><img src="img/settings.png" alt="settings" id="settings" height="50px" width="50px"></a>
@@ -31,8 +31,7 @@
 			<div id="sidr">
 				<ul>
 	    			<li><a href="#">Edit Profile</a></li>
-	    			<li><a href="#">List of Books You Have</a></li>
-	    			<li><a href="#">List of Books You Want</a></li>
+	    			<li><a href="booklist.html">My Books</a></li>
 	    			<li><a href="#">Sign Out</a></li>
 	  			</ul>
 			</div>
@@ -44,70 +43,48 @@
 			</script>
 		</header>
 
-		
 		<div class="col-xs-12">
-		<div class="pagetitle">
-		<h2>Add</h2>
+
+			<div class="pagetitle">
+				<h2>My Books</h2>
+			</div>
+
+		<div class="booklist">
+
+			<p><a href="">Campbell Biology (9th Edition)</a></p>
+			<p>By: Jane B. Reece, Lisa A. Urry, Michael L. Cain and Steven A. Wasserman</p>
+			<!-- <p><button type="submit" class="remove">Remove</button></p> -->
+
 		</div>
+
+		<div class="booklist">
+
+			<p><a href="">Campbell Biology (9th Edition)</a></p>
+			<p>By: Jane B. Reece, Lisa A. Urry, Michael L. Cain and Steven A. Wasserman</p>
+			<!-- <p><button type="submit" class="remove">Remove</button></p> -->
+
 		</div>
 
-			<form class="book_form" name="book_form" action="" method="post">
+		<div class="booklist">
 
-			<form id="book_form" class="book_form" name="book_form" action="" method="post">
+			<p><a href="">Campbell Biology (9th Edition)</a></p>
+			<p>By: Jane B. Reece, Lisa A. Urry, Michael L. Cain and Steven A. Wasserman</p>
+			<!-- <p><button type="submit" class="remove">Remove</button></p> -->
 
-				<div class="col-xs-8">
-					<a href=""><h2>Scan Barcode</h2></a>
-					<span class="required_notification">* Denotes Required Field</span>
-				</div>
+		</div>
 
-				<div class="col-xs-12">
+		<div class="booklist">
 
-						<ul>
-						
-						<li>
-							<label  for="title">Title:</label> 
-							<input id="title" type="text" name="title" required />
-						</li>
-						
-						<li>
-							<label  for="author">Author:</label>
-							<input id="author" type="text" name="author" required />
-						</li>
-						
-						<li>
-							<label  for="edition">Edition:</label>
-						 	<input id="edition" type="text" name="edition" required>
-						</li>
-						
-						<li>
-							<label  for="series">ISBN Number:</label>
-						 	<input id="isbn" type="text" name="series" required>
-						</li>
-						
-						<li>
-							<label for="description">Description:</label>
-							<textarea id="description" type="text" name="description" cols="10" rows="6"></textarea>
-						</li>
-						
-						<li>
-							<label for="condition">Condition:</label>
-						 	<select id="condition" name="condition" required>
-								<option value="New">New</option>
-								<option value="Used">Used</option>
-								<option value="Old">Old</option>
-							</select>
-						 </li>
-						
-						<li>
-							<button id="submitbtn"class="submit" type="Submit">Submit</button>
-							<!-- <a href="yourbooks.html" class="submit" type="Submit">Submit</a> -->
-						</li>
-						
-						</ul>
-					
+			<p><a href="">Campbell Biology (9th Edition)</a></p>
+			<p>By: Jane B. Reece, Lisa A. Urry, Michael L. Cain and Steven A. Wasserman</p>
+			<!-- <p><button type="submit" class="remove">Remove</button></p> -->
 
-				</div>
-			</form>
+		</div>
 
-		</body>
+
+		</div>
+
+		<script src="js/jquery.sidr.min.js"></script>
+
+	</body>
 </html>
