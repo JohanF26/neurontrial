@@ -32,24 +32,25 @@
 			<ul>
 
 				<li>
-					<label for="firstName">First Name:</label> 
-					<input id="firstName" type="text" name="firstName" required />
+					<input id="firstName" type="text" name="firstName" placeholder="First Name" required />
 				</li>
 
 				<li>
-					<label for="lastName">Last Name:</label>
-					<input id="lastName" type="text" name="lastName" required />
+					<input id="lastName" type="text" name="lastName" placeholder="Last Name" required/>
 				</li>
 
 				<li>
-					<label for="email">Email:</label>
-					<input id="email" type="text" name="email" required>
+					<input id="email" type="text" name="email" placeholder="E-mail address" required>
+				</li>
+
+				<li>
+					<input id="email" type="text" name="email" placeholder="confirm e-mail address" required>
 				</li>
 
 
 				<li>
-					<label for="school">School:</label>
 					<select id="school" name="colleges" required>
+						<option value="Choose">Choose your school</option>
 						<option value="New York University">New York University</option>
 						<option value="LIU Brooklyn">LIU Brooklyn</option>
 						<option value="Barnard College">Barnard College</option>
@@ -72,13 +73,11 @@
 				</li>
 
 				<li>
-					<label for="username">Username:</label>
-					<input id="username" type="text" name="username" required>
+					<input id="username" type="text" name="username" placeholder="Username" required>
 				</li>
 
 				<li>
-					<label for="password">Password:</label>
-					<input id="password" type="password" name="password"required >
+					<input id="password" type="password" name="password" placeholder="Password" required >
 					<span>Password Must Be Atleast 8 Character</span>
 				</li>
 
@@ -93,8 +92,7 @@
 				</li> -->
 
 						<li>
-							<label for="verifyPass">Verify Pass:</label>
-							<input id="cpassword" type="password" name="verifyPass">
+							<input id="cpassword" type="password" name="verifyPass" placeholder="Re-type password">
 							<span>Password Do Not Match</span>
 						</li>
 
