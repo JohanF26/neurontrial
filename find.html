@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<!--
-	test app
--->
 <html>
 
 	<head>
@@ -83,8 +80,8 @@
 			<div class="col-xs-12">
 				<ul>							
 					<li>
-						<label for="Isbnnmbr">ISBN Number:</label>
-						<input id="isbn" type="text" name="ispncode" />
+						<label for="isbnnmbr">ISBN Number:</label>
+						<input id="isbn" type="text" name="isbncode" />
 					</li>
 					
 					<li>
@@ -98,10 +95,10 @@
 
 <!-- This is the "result box" with info for every entry-->
 				
-				<div id="results">
-					<h1 id="bookName">txt</h1>
-					<p id="author">txt</p>
-					<p id="condition">txt</p>
+				<div id="result_0">
+					<h4 class="book_title" id="bookName">txt</h4>
+					<p class="result_author" id="author">txt</p>
+					<p class="isbnnmbr" id="condition">txt</p>
 				</div>
 
 				<!--  ***********************START OF JAVASCRIPT***********************  -->
@@ -114,7 +111,7 @@
 			Parse.initialize("IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT", "WIQ1jk87XOqQKuQxwWBeWI08W3I7K3LC05e8VhW3");
 
 			$(document).ready(function(){
-				$("#results").hide();
+				$("#result_0").hide();
 				});
 
 // This is for search by Title
@@ -125,8 +122,8 @@
 				var AddBook = Parse.Object.extend("AddBook");
 
 					var title = $("#title").val().toLowerCase();
-					var author = $("#author").val();
-					var isbn = $("isbn").val();
+					var author = $("#author").val().toLowerCase();
+					var isbn = $("#isbn").val();
 
 				var titleQuery = new Parse.Query(AddBook);
 
@@ -152,9 +149,9 @@
 					      console.log(Title);
 
 					      // This is the magical code which creates a new entry everytime a result comes up!!
-					      $("#results").clone().appendTo("body");
-					      $("#results").show();
-					      $('#bookName').text(Title + "(Edition No."+ Edition + ")");
+					      $("#result_0").clone().appendTo("body");
+					      $("#result_0").show();
+					      $('#bookName').text(Title + "(Edition No. "+ Edition + ")");
 					      $('#author').text("By: " + Author);
 					      $('#condition').text("Condition: " + Condition);			
 
@@ -163,12 +160,112 @@
     				}, //this closes success
 
 				  error: function(error) {
-				    alert("Error: " + error.code + " " + error.message);
-				  }
-				});
+				  	console.log("Error: " + error.code + " " + error.message);
+					  	}
 			});
+		});
 // This is for Search by Author
-			
+
+			$("#Authorform").submit(function(event){
+
+				event.preventDefault();
+
+				var AddBook = Parse.Object.extend("AddBook");
+
+					var title = $("#title").val().toLowerCase();
+					var author = $("#author").val().toLowerCase();
+					var isbn = $("#isbn").val();
+
+				var authorQuery = new Parse.Query(AddBook);
+
+				authorQuery.startsWith("searchAuthor", author);
+
+				authorQuery.find({
+  					success: function(results) {
+	    				console.log("Successfully retrieved " + results.length + " books");
+	    				$(".col-xs-12").remove();
+						
+						 // Do something with the returned Parse.Object values
+					    for (var i = 0; i < results.length; i++) { 
+					      var object = results[i];
+
+					      var Title = object.get('title');
+					      var Author = object.get('author');
+					      var Condition = object.get('condition');
+					      var Edition = object.get('edition'); 
+
+					      console.log(object.get('owner'));
+					      console.log(Author);
+					      console.log(Condition);
+					      console.log(Title);
+
+					      // This is the magical code which creates a new entry everytime a result comes up!!
+					      $("#result_0").clone().appendTo("body");
+					      $("#result_0").show();
+					      $('#bookName').text(Title + "(Edition No. "+ Edition + ")");
+					      $('#author').text("By: " + Author);
+					      $('#condition').text("Condition: " + Condition);			
+
+					    }
+    				
+    				}, //this closes success
+
+				  error: function(error) {
+				  	console.log("Error: " + error.code + " " + error.message);
+				  }
+			});	
+		});			
+// tis is for search by isbn
+			$("#Isbnform").submit(function(event){
+
+				event.preventDefault();
+
+				var AddBook = Parse.Object.extend("AddBook");
+
+					var title = $("#title").val().toLowerCase();
+					var author = $("#author").val().toLowerCase();
+					var isbn = $("#isbn").val();
+
+				var isbnQuery = new Parse.Query(AddBook);
+
+				isbnQuery.startsWith("isbn", isbn);
+
+				isbnQuery.find({
+  					success: function(results) {
+	    				console.log("Successfully retrieved " + results.length + " books");
+	    				$(".col-xs-12").remove();
+						
+						 // Do something with the returned Parse.Object values
+					    for (var i = 0; i < results.length; i++) { 
+					      var object = results[i];
+
+					      var Title = object.get('title');
+					      var Author = object.get('author');
+					      var Condition = object.get('condition');
+					      var Edition = object.get('edition'); 
+
+					      console.log(object.get('owner'));
+					      console.log(Author);
+					      console.log(Condition);
+					      console.log(Title);
+
+					      // This is the magical code which creates a new entry everytime a result comes up!!
+					      $("#result_0").clone().appendTo("body");
+					      $("#result_0").show();
+					      $('#bookName').text(Title + "(Edition No. "+ Edition + ")");
+					      $('#author').text("By: " + Author);
+					      $('#condition').text("Condition: " + Condition);			
+
+					    }
+    				
+    				}, //this closes success
+
+				  error: function(error) {
+				  	console.log("Error: " + error.code + " " + error.message);
+				  }
+			});
+		});
+
 </script>
 
 
