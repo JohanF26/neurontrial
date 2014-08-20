@@ -279,11 +279,6 @@ a.submit:active {
 	Results
 ***************************************/
 
-.search-results div{
-	float: left;
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
 
 .search-results div img {
 	float: left;
@@ -295,6 +290,14 @@ a.submit:active {
 #result_0 {
 	width: 100%;
 	border-bottom: 1px solid #777;
+	padding: 20px;
+	padding-top: 10px;
+	padding-bottom: 40px;
+	margin-top: 10px;
+	font-family: "Dosis", sans-serif;
+	font-size: 1.3em;
+	font-weight: bold;
+	border-bottom: #D1E3E3 solid 1px;
 }
 
 #result_1 {
@@ -792,7 +795,7 @@ body.booklist-body {
 }
 
 #sidr {
-	background-color: #003D3D;
+	background-color: #005269;
 	font-family: "Dosis", sans-serif;
 	font-size: 1.5em;
 }
@@ -802,7 +805,6 @@ body.booklist-body {
 }
 
 #sidr {
-	box-shadow: none;
 	border-left: 1px solid #000
 }
 
@@ -865,4 +867,70 @@ a.nav_2 {
 
 nav.else {
 	background: #fff;
+}
+
+.book_title {
+	color: #33CCFF;
+	font-size: 1.5em;
+}
+
+.search-results a.connect {
+	border-radius: 10%;
+	background: #00CCCC;
+	color: #fff;
+	padding: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 20px;
+	float: right;
+	margin-top: -10px;
+	clear: both;
+}
+
+#result_0 p {
+	margin-left: 20px;
+}
+
+.offers {
+	font-size: 1.3em;
+}
+
+.title {
+	color: #3399FF;
+	font-size: 1.1em;
+}
+
+.list_of_books {
+	width: 100%;
+	height: 30px;
+	margin: 10px 0; 
+	text-align: center;
+}
+
+.money {
+	clear: right;
+	float: right;
+	border: 1px solid #ddd;
+}
+
+button.connect2 {
+	border-radius: 10%;
+	background: #00CCCC;
+	color: #fff;
+	padding: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	border-radius: 20px;
+	float: right;
+	clear: both;
+	margin: 10px;
+	border-top: 1px solid #ddd;
+}
+
+select {
+	border: 1px solid #ddd;
+}
+
+.confirm {
+	border-top: 1px solid #aaa;
 }
