@@ -52,22 +52,23 @@
 
 			<nav class="else">
 		        <ul>
-		          <li><a href="add.html" class="pending left selected nav_1">HAVE</a></li>
-		          <li><a href="want.html" class="accepted right nav_2">WANT</a></li>
+		          <li><a href="add.html" class="pending left nav_1">HAVE</a></li>
+		          <li><a href="want.html" class="accepted selected right nav_2">WANT</a></li>
 		        </ul>
 		    </nav>
 		
 			<form id="book_form" class="book_form" name="book_form" action="" method="post">
-
+<!-- 
 				<div class="col-xs-8">
 					<a href=""><h2>Scan Barcode</h2></a>
+					<span class="required_notification">* Denotes Required Field</span>
 				</div>
-
+ -->
 				<div class="col-xs-12">
 
 						<ul>
 						
-						<li>
+						<li> 
 							<input id="title" type="text" name="title" placeholder="Book Title" required />
 						</li>
 						
@@ -77,28 +78,12 @@
 						
 						<li>
 						 	<input id="edition" type="number" name="quantity"placeholder="Edition number" style="height: 30px"
-						 	min="1" placeholder="Edition">
+						 	min="1">
 						</li>
 						
-						<li>
-						 	<input id="isbn" type="text" name="series" placeholder="ISBN Number" required>
-						</li>
 						
 						<li>
-							<textarea id="description" type="text" name="description" cols="10" rows="6" placeholder="Description"></textarea>
-						</li>
-						
-						<li>
-						 	<select id="condition" name="condition" required>
-								<option value="New">Condition</option>
-								<option value="New">New</option>
-								<option value="Used">Used</option>
-								<option value="Old">Old</option>
-							</select>
-						 </li>
-						
-						<li>
-							<button id="submitbtn"class="submit" type="Submit">Add to Books I HAVE</button>
+							<button id="submitbtn"class="submit" type="Submit">Add to Books I WANT</button>
 							<!-- <a href="yourbooks.html" class="submit" type="Submit">Submit</a> -->
 						</li>
 						
@@ -110,17 +95,16 @@
 
 			<script src="js/jquery.sidr.min.js"></script>
 
-
-<script type="text/javascript">
+			<script type="text/javascript">
 Parse.initialize("IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT", "WIQ1jk87XOqQKuQxwWBeWI08W3I7K3LC05e8VhW3");
 
 $("#book_form").submit(function(event){
 
 	event.preventDefault();
 
-		var AddBook = Parse.Object.extend("AddBook");
+		var WantBook = Parse.Object.extend("WantBook");
 
-		var newBook = new AddBook();
+		var newBook = new WantBook();
 
 
 		var title = $("#title").val();
@@ -128,9 +112,6 @@ $("#book_form").submit(function(event){
 		var author = $("#author").val();
 		var searchAuthor = $("#author").val().toLowerCase();
 		var edition = $("#edition").val();
-		var isbn = $("#isbn").val();
-		var description = $("#description").val();
-		var condition = $("#condition").val();
 		var currentUser = Parse.User.current();
 
 		newBook.set("title", title);
@@ -138,9 +119,6 @@ $("#book_form").submit(function(event){
 		newBook.set("author", author);
 		newBook.set("searchAuthor", searchAuthor);
 		newBook.set("edition", edition);
-		newBook.set("isbn", isbn);
-		newBook.set("description", description);
-		newBook.set("condition", condition);
 		newBook.set("owner", currentUser);
 
 		newBook.save(null, {
@@ -159,6 +137,7 @@ $("#book_form").submit(function(event){
 });
 
 </script>
+
 
 	</body>
 </html>

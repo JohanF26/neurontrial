@@ -40,11 +40,11 @@
 				</li>
 
 				<li>
-					<input id="email" type="text" name="email" placeholder="E-mail address" required>
+					<input id="email" type="text" name="email" placeholder="Email" required>
 				</li>
 
 				<li>
-					<input id="email" type="text" name="email" placeholder="confirm e-mail address" required>
+					<input id="retype_email" type="text" name="email" placeholder="Re-type email" required>
 				</li>
 
 
@@ -218,7 +218,7 @@
 			user.signUp(null, {
 				success: function(user) {
 					console.log("Success!");
-					location.href="index.html";
+					location.href="profile.html";
 				},
 
 				error: function(user, error) {

@@ -13,7 +13,6 @@ li {
 
 header {
 	background: #001D24;
-	border-bottom: solid 5px #001D24;
 	width: 100%;
 }
 
@@ -186,20 +185,20 @@ textarea {
 
 .book_form li {
 	padding: 12px;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #f2f2f2;
 	position: relative;
 }
 
-/*.book_form li:first-child {
+.book_form li:first-child {
 	border-top: 1px solid #777;
-}*/
+}
 
 .book_form li:last-child {
 	border-bottom: 1px solid #777
 }
 
 .col-xs-8 {
-	margin: 0;
+	margin-top: -30px;
 	display: inline;
 }
 
@@ -209,7 +208,7 @@ textarea {
 	display: inline;
 }
 
-.book_form label {
+.book_form li label {
 	width: 100px;
 	margin-top: 3px;
 	display: inline-block;
@@ -217,36 +216,49 @@ textarea {
 	padding: 3px;
 }
 
-.book_form input {
-	height: 20px;
-	width: 60%;
+.book_form li input, .book_form select {
+	height: 30px;
+	width: 100%;
 	padding: 5px 8px;
+	font-size: 17px;
+}
+
+.book_form select {
+	width: 95%;
 }
 
 .book_form textarea {
 	padding: 8px;
-	width: 60%;
+	width: 100%;
+	border: 1px solid #fff;
 }
 
 .book_form a {
 	margin-left: 100px;
 }
 
-.book_form input, .book_form textarea { 
-    border:1px solid #aaa;
-    box-shadow: 0px 0px 3px #ccc, 0 10px 15px #eee inset;
+.book_form li input, .book_form select { 
+    border:1px solid #fff;
     border-radius:2px;
     padding-right: 30px;
+    font-size: 
+}
+
+.book_form select { 
+    border:1px solid #ddd;
+    border-radius:2px;
+    padding-right: 30px;
+    font-size: 
 }
 
 .book_form input:focus, .book_form textarea:focus {
     background: #fff; 
-    border:1px solid #555; 
+    border:1px solid #fff; 
     box-shadow: 0 0 3px #aaa; 
 }
 
 a.submit {
-    background-color: #68b12f;
+    background-color: #00B2B2;
     border-radius: 3px;
     color:white;
     font-weight: bold;
@@ -255,16 +267,12 @@ a.submit {
 }
 
 a.submit:active {
-    background-color:#356b0b;
+    background-color: #007D7D;
      
 }
 
 .col-xs-8 a:active h2 {
 	background: #D4D7D7;
-}
-
-input:required, textarea:required {
-    background: #fff url("../img/required.png") no-repeat 98% center;
 }
 
 /***************************************
@@ -454,6 +462,7 @@ textarea {
 .col-xs-8 {
 	margin: 0;
 	display: inline;
+	margin-bottom: -20px;
 }
 
 .required_notification {
@@ -592,7 +601,7 @@ textarea {
 
 .signup_form li {
 	padding: 12px;
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid #f2f2f2;
 	position: relative;
 }
 
@@ -623,11 +632,15 @@ textarea {
 	padding: 3px;
 }
 
-.signup_form li input {
+.signup_form li input, .signup_form select {
 	height: 30px;
 	width: 100%;
 	padding: 5px 8px;
 	font-size: 17px;
+}
+
+.signup_form select {
+	width: 95%;
 }
 
 .signup_form textarea {
@@ -639,7 +652,7 @@ textarea {
 	margin-left: 100px;
 }
 
-.signup_form li input, .signup_form textarea { 
+.signup_form li input, .signup_form select { 
     border:1px solid #fff;
     border-radius:2px;
     padding-right: 30px;
@@ -653,7 +666,7 @@ textarea {
 }
 
 button.submit {
-    background-color: #68b12f;
+    background-color: #00B2B2;
     border-radius: 3px;
     color:white;
     font-weight: bold;
@@ -663,16 +676,12 @@ button.submit {
 }
 
 button.submit:active {
-    background-color:#356b0b;
+    background-color: #007D7D;
      
 }
 
 .col-xs-8 a:active h2 {
 	background: #D4D7D7;
-}
-
-input:required, textarea:required {
-    background: #fff url("../img/required.png") no-repeat 98% center;
 }
 
 #profpic{
@@ -738,6 +747,12 @@ body.ntf-body {
 	padding-bottom: 10px;
 }
 
+.not h2 {
+	font-family: "Dosis", sans-serif;
+	color: #A7B6B6;
+	padding-bottom: 10px;
+}
+
 div#sidr ul li button {
 	
 }
@@ -777,12 +792,77 @@ body.booklist-body {
 }
 
 #sidr {
-	background-color: #1A6680;
+	background-color: #003D3D;
 	font-family: "Dosis", sans-serif;
 	font-size: 1.5em;
+}
+
+#sidr ul li a {
+	color: #fff;
+}
+
+#sidr {
+	box-shadow: none;
+	border-left: 1px solid #000
 }
 
 .info p {
 	text-align: center;
 	font-family: "Dosis", sans-serif;
+}
+
+/************************************
+Add page
+************************************/
+
+nav {
+  text-align: center;
+  padding: 10px 0;
+  margin: 0 0 0;
+  background: #F5F5F5; 
+  border-bottom: 1px solid #ddd;
+}
+
+nav ul {
+  list-style: none;
+  margin: 10px 0px;
+  margin-top: -5px;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+ 
+}
+
+nav a {
+  font-weight: 800;
+}
+
+nav li a {
+	padding: 7px 13px;
+  	border: 1px solid #bbb;
+  	margin-left: -5px;
+}
+
+nav li a.selected {
+	background: #00BBBB;;
+	border: 1px solid #bbb;
+	color: #fff;
+}
+
+a.nav_1 {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px; 
+	padding: 10px 30px;
+}
+
+a.nav_2 {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px; 
+	padding: 10px 30px;
+}
+
+nav.else {
+	background: #fff;
 }
