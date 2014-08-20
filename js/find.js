@@ -1,0 +1,157 @@
+
+Parse.initialize("IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT", "WIQ1jk87XOqQKuQxwWBeWI08W3I7K3LC05e8VhW3");
+
+			$(document).ready(function(){
+				$("#result_0").hide();
+				});
+
+					var title = $("#title").val().toLowerCase();
+					var author = $("#author").val().toLowerCase();
+					var isbn = $("#isbn").val();
+// This is for search by Title
+		// 	$("#Titleform").submit(function(event){
+
+		// 		event.preventDefault();
+
+		// 		var AddBook = Parse.Object.extend("AddBook");
+
+		// 		var titleQuery = new Parse.Query(AddBook);
+
+		// 		titleQuery.startsWith("searchTitle", title);
+
+		// 		titleQuery.find({
+  // 					success: function(results) {
+	 //    				console.log("Successfully retrieved " + results.length + " books");
+	 //    				$("#theForms").remove();
+						
+		// 				 // Do something with the returned Parse.Object values
+		// 			    for (var i = 0; i < results.length; i++) { 
+		// 			      var object = results[i];
+
+		// 			      var Title = object.get('title');
+		// 			      var Author = object.get('author');
+		// 			      var Condition = object.get('condition');
+		// 			      var Edition = object.get('edition'); 
+
+		// 			      console.log(object.get('owner'));
+		// 			      console.log(Author);
+		// 			      console.log(Condition);
+		// 			      console.log(Title);
+
+		// 			      // This is the magical code which creates a new entry everytime a result comes up!!
+		// 			      $("#result_0").clone().appendTo("body");
+		// 			      $("#result_0").show();
+		// 			      $('#bookName').text(Title + "(Edition No. "+ Edition + ")");
+		// 			      $('#author').text("By: " + Author);
+		// 			      $('#condition').text("Condition: " + Condition);			
+
+		// 			    }
+    				
+  //   				}, //this closes success
+
+		// 		  error: function(error) {
+		// 		  	console.log("Error: " + error.code + " " + error.message);
+		// 			  	}
+		// 	});
+		// });
+// This is for Search by Author
+
+			$("#Authorform").submit(function(event){
+
+				event.preventDefault();
+
+				var AddBook = Parse.Object.extend("AddBook");
+
+					var title = $("#title").val().toLowerCase();
+					var author = $("#author").val().toLowerCase();
+					var isbn = $("#isbn").val();
+
+				var authorQuery = new Parse.Query(AddBook);
+
+				authorQuery.startsWith("searchAuthor", author);
+
+				authorQuery.find({
+  					success: function(results) {
+	    				console.log("Successfully retrieved " + results.length + " books");
+	    				$("#theForms").remove();
+						
+						 // Do something with the returned Parse.Object values
+					    for (var i = 0; i < results.length; i++) { 
+					      var object = results[i];
+
+					      var Title = object.get('title');
+					      var Author = object.get('author');
+					      var Condition = object.get('condition');
+					      var Edition = object.get('edition'); 
+
+					      console.log(object.get('owner'));
+					      console.log(Author);
+					      console.log(Condition);
+					      console.log(Title);
+
+					      // This is the magical code which creates a new entry everytime a result comes up!!
+					      $("#result_0").clone().appendTo("body");
+					      $("#result_0").show();
+					      $('#bookName').text(Title + "(Edition No. "+ Edition + ")");
+					      $('#author').text("By: " + Author);
+					      $('#condition').text("Condition: " + Condition);			
+
+					    }
+    				
+    				}, //this closes success
+
+				  error: function(error) {
+				  	console.log("Error: " + error.code + " " + error.message);
+				  }
+			});	
+		});			
+// tis is for search by isbn
+			$("#Isbnform").submit(function(event){
+
+				event.preventDefault();
+
+				var AddBook = Parse.Object.extend("AddBook");
+
+					var title = $("#title").val().toLowerCase();
+					var author = $("#author").val().toLowerCase();
+					var isbn = $("#isbn").val();
+
+				var isbnQuery = new Parse.Query(AddBook);
+				
+				isbnQuery.startsWith("isbn", isbn);
+
+				isbnQuery.find({
+  					success: function(results) {
+	    				console.log("Successfully retrieved " + results.length + " books");
+	    				$("#theForms").remove();
+						
+						 // Do something with the returned Parse.Object values
+					    for (var i = 0; i < results.length; i++) { 
+					      var object = results[i];
+
+					      var Title = object.get('title');
+					      var Author = object.get('author');
+					      var Condition = object.get('condition');
+					      var Edition = object.get('edition'); 
+
+					      console.log(object.get('owner'));
+					      console.log(Author);
+					      console.log(Condition);
+					      console.log(Title);
+
+					      // This is the magical code which creates a new entry everytime a result comes up!!
+					      $("#result_0").clone().appendTo("body");
+					      $("#result_0").show();
+					      $('#bookName').text(Title + "(Edition No. "+ Edition + ")");
+					      $('#author').text("By: " + Author);
+					      $('#condition').text("Condition: " + Condition);			
+
+					    }
+    				
+    				}, //this closes success
+
+				  error: function(error) {
+				  	console.log("Error: " + error.code + " " + error.message);
+				  }
+			});
+		});

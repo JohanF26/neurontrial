@@ -38,7 +38,7 @@
 			</script>
 		</header>
 		
-		<div id="theForms">
+		<div class="theForms">
 		<div class="col-xs-12">
 		<div class="pagetitle">
 		<h2>Find a Book</h2>
@@ -93,12 +93,32 @@
 	</div>
 
 <!-- This is the "result box" with info for every entry-->
-				
+<!-- 			<div class="col-xs-12">
 				<div id="result_0">
 					<h4 class="book_title" id="bookName">txt</h4>
 					<p class="result_author" id="author">txt</p>
 					<p class="isbnnmbr" id="condition">txt</p>
 				</div>
+			</div> -->
+
+<div class="col-xs-12">
+		<div class="pagetitle">
+			<h2>Results for: <span>txt</span></h2>
+		</div>
+
+		<div class="search-results">
+			<div id="result_0">
+				<h4 class="book_title" id="bookName"><b>txt</b></h4>
+				<p class="result_author" id="author">txt</p>
+				<p id="condition">txt</p>
+				<p id="owner">txt</p>
+				<div ="yes-no">
+					<a href="offer.html" class="connect"><b>Connect</b></a>
+				</div>
+			</div>
+		</div>
+	</div>
+
 
 				<!--  ***********************START OF JAVASCRIPT***********************  -->
 				<!--  ***********************START OF JAVASCRIPT***********************  -->
@@ -110,7 +130,7 @@
 			Parse.initialize("IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT", "WIQ1jk87XOqQKuQxwWBeWI08W3I7K3LC05e8VhW3");
 
 			$(document).ready(function(){
-				$("#result_0").hide();
+				$(".pagetitle").hide();
 				});
 
 // This is for search by Title
@@ -127,11 +147,12 @@
 				var titleQuery = new Parse.Query(AddBook);
 
 				titleQuery.startsWith("searchTitle", title);
+				titleQuery.include("owner");
 
 				titleQuery.find({
   					success: function(results) {
 	    				console.log("Successfully retrieved " + results.length + " books");
-	    				$(".col-xs-12").remove();
+	    				$(".theForms").remove();
 						
 						 // Do something with the returned Parse.Object values
 					    for (var i = 0; i < results.length; i++) { 
@@ -141,7 +162,9 @@
 					      var Author = object.get('author');
 					      var Condition = object.get('condition');
 					      var Edition = object.get('edition'); 
+					      var owner = object.get('owner');
 
+					      console.log(owner.get('username'));
 					      console.log(object.get('owner'));
 					      console.log(Author);
 					      console.log(Condition);
@@ -177,12 +200,14 @@
 
 				var authorQuery = new Parse.Query(AddBook);
 
+
 				authorQuery.startsWith("searchAuthor", author);
+				authorQuery.include("owner");
 
 				authorQuery.find({
   					success: function(results) {
 	    				console.log("Successfully retrieved " + results.length + " books");
-	    				$(".col-xs-12").remove();
+	    				$(".theForms").remove();
 						
 						 // Do something with the returned Parse.Object values
 					    for (var i = 0; i < results.length; i++) { 
@@ -191,9 +216,12 @@
 					      var Title = object.get('title');
 					      var Author = object.get('author');
 					      var Condition = object.get('condition');
-					      var Edition = object.get('edition'); 
+					      var Edition = object.get('edition');
 
-					      console.log(object.get('owner'));
+					      var owner = object.get('owner'); 
+
+					      
+					      console.log(owner.get('username'));
 					      console.log(Author);
 					      console.log(Condition);
 					      console.log(Title);
@@ -228,11 +256,12 @@
 				var isbnQuery = new Parse.Query(AddBook);
 
 				isbnQuery.startsWith("isbn", isbn);
+				isbnQuery.include("owner");
 
 				isbnQuery.find({
   					success: function(results) {
 	    				console.log("Successfully retrieved " + results.length + " books");
-	    				$(".col-xs-12").remove();
+	    				$(".theForms").remove();
 						
 						 // Do something with the returned Parse.Object values
 					    for (var i = 0; i < results.length; i++) { 
@@ -242,7 +271,9 @@
 					      var Author = object.get('author');
 					      var Condition = object.get('condition');
 					      var Edition = object.get('edition'); 
-
+					      var owner = object.get('owner');
+						  
+						  console.log(owner.get('username'));
 					      console.log(object.get('owner'));
 					      console.log(Author);
 					      console.log(Condition);
