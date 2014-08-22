@@ -114,6 +114,8 @@ Textbook + USD$ <span> <input type="number" name="money" id="money" class="money
 	  }
 	});
 
+	
+
 	$("#offers").submit(function(event){
 
 		event.preventDefault();
@@ -134,7 +136,7 @@ Textbook + USD$ <span> <input type="number" name="money" id="money" class="money
 		offer.save(null, {
 		  success: function(gameScore) {
 		    // Execute any logic that should take place after the object is saved.
-		    alert('New object created with objectId: ' + offer.id);
+		    console.log('New object created with objectId: ' + offer.id);
 		  },
 		  error: function(gameScore, error) {
 		    // Execute any logic that should take place if the save fails.

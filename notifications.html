@@ -56,13 +56,11 @@
 		        </ul>
 		    </nav>
 
+			<div class="allNotifications">
 
-		<div class="notifications">
 
-			<p><span>Usr</span> would like to trade your <span>book</span> textbook for <span>book</span> + USD$<span>30.00</span></p>
-			<div ="yes-no">
-			<button type="submit" class="no">Decline</button>
-			<button type="submit" class="yes">Accept</button>
+
+
 			</div>
 
 		</div>
@@ -98,6 +96,11 @@
 
 		<script type="text/javascript">
 
+		$(document).ready(function(){
+			$("#newNot").hide();
+			
+		});
+
 		var currentUser = Parse.User.current();
 		
 
@@ -109,11 +112,27 @@
 
 		notifications.find({
 		  success: function(results) {
-		    alert("Successfully retrieved " + results.length + " scores.");
+		    console.log("Successfully retrieved " + results.length + " scores.");
 		    // for loop
 		    for (var i = 0; i < results.length; i++) { 
 		      var object = results[i];
 		      console.log(object.id + ' - ' + object.get('requestor'));
+		      var requestor = object.get('requestor');
+		      var ownerBook = object.get('ownerBook');
+		      var requestorBook = object.get('requestorBook');
+		      var requestorMoney = object.get('requestorMoney')
+		      var notId = object.id;
+
+		      var newNot = $("#newNot").clone();
+			  newNot.appendTo(".col-xs-12");
+
+			  $('#requestor').text(requestor);
+			  $('#ownerBook').text(ownerBook);
+			  $('#requestorBook').text(requestorBook);
+			  $('#requestorMoney').text(requestorMoney);
+
+			  newNot.show();
+
 		    }
 		  },
 		  error: function(error) {
@@ -125,6 +144,16 @@
 
 		<script src="js/jquery.sidr.min.js"></script>
 
+		<div class="notifications" id="newNot">
+
+			<p><span id="requestor">Usr</span> would like to trade your <span id="ownerBook">book</span> textbook for <span id="requestorBook">book</span> + USD $<span id="requestorMoney">30.00</span></p>
+			<div ="yes-no">
+			<button type="submit" class="no">Decline</button>
+			<button type="submit" class="yes">Accept</button>
+			</div>
+
+		</div>
+
 
 	</body>
-</html>
+</html   

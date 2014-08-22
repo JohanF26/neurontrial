@@ -18,6 +18,9 @@ Parse.initialize("IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT", "WIQ1jk87XOqQKuQxwW
 					var authorInput = $("#author").val()
 					var isbn = $("#isbn").val();
 
+				$('#resultFor').text(titleInput);
+				$('.pagetitle').show();
+
 				var titleQuery = new Parse.Query(AddBook);
 
 				titleQuery.startsWith("searchTitle", title);
