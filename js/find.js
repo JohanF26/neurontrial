@@ -40,25 +40,32 @@ Parse.initialize("IiLH73bMedzAQDrSPQ9MMYIut8AnuDAzp14FQZsT", "WIQ1jk87XOqQKuQxwW
 					      var Condition = object.get('condition');
 					      var Edition = object.get('edition'); 
 					      var owner = object.get('owner');
-					      var userId = owner.get('objectId')
+					      var ownerId = owner.id;
+					      var school = owner.get('school')
 
-					      console.log(owner.get('username'));
-					      console.log(owner.get(objectId));
+					      // var userId = owner.get('objectId');
+
+					      console.log(ownerId);
+					      console.log(school);
 					      console.log(Author);
 					      console.log(Condition);
 					      console.log(Title);
 					      console.log(titleInput);
 
 
+
+
 					      // This is the magical code which creates a new entry everytime a result comes up!!
 					      var result = $("#sample-result").clone();
 					      result.appendTo(".search-results");
-					      // $(".result_0").show();
-					      $('#bookName').text(Title + "(Edition No. "+ Edition + ")");
+
+					      var link = 'offer.html#' + 'book_title=' + encodeURIComponent(Title) + '&' + 'edition=' + encodeURIComponent(Edition) + '&' + 'owner=' + encodeURIComponent(ownerId) ;	
+					  	  $("#connect").attr('href', link);
+
+					      $('#bookName').text(Title + " (Edition No. "+ Edition + ")");
 					      $('#author').text("By: " + Author);
 					      $('#condition').text("Condition: " + Condition);
-					      var link = 'offer#' + 'book_title=' + encodeURIComponent(Title) + '&' + 'owner=' + userId;	
-					  	  result.find(".connect").attr('href', link);
+					      $('#owner').text("Owned by " + ownerId + " at " + school);
 					      result.show();	
 					    }
 

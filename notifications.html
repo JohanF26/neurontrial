@@ -67,7 +67,7 @@
 
 		</div>
 
-		<div class="notifications">
+		<!-- <div class="notifications">
 
 			<p><span>Usr</span> would like to trade your <span>book</span> textbook.</p>
 			<div ="yes-no">
@@ -93,25 +93,27 @@
 			<div ="yes-no">
 			<button type="submit" class="no">Ignore</button>
 			<button type="submit" class="yes">Connect</button>
-			</div>
+			</div> -->
 
 
 		<script type="text/javascript">
 
 		var currentUser = Parse.User.current();
-		var offer = Parse.Object.extend("offer");
 		
+
+		var offer = Parse.Object.extend("Notification");
+
 		var notifications = new Parse.Query(offer);
-		notifications.equalTo("owner", currentUser);
-		notifications.equalTo("status", "pending")
+		notifications.equalTo("owner", currentUser.id);
+		notifications.equalTo("pending", true)
 
 		notifications.find({
 		  success: function(results) {
 		    alert("Successfully retrieved " + results.length + " scores.");
-		    // Do something with the returned Parse.Object values
+		    // for loop
 		    for (var i = 0; i < results.length; i++) { 
 		      var object = results[i];
-		      alert(object.id + ' - ' + object.get('playerName'));
+		      console.log(object.id + ' - ' + object.get('requestor'));
 		    }
 		  },
 		  error: function(error) {
