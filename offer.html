@@ -46,20 +46,115 @@
 			<h2>Confirm</h2>
 		</div>
 
-<form class="offers">
+<form class="offers" id="offers">
 
-<p> Trade <span class="title">txt</span> for your<br>
+<p> Trade <span class="title" id="title">txt</span> for your<br>
 
-<select class="list_of_books">
-  <option value="Book 1">Book 1</option> 
+<select id="list_of_books" class="list_of_books">
+   <option id="bookOptions" value="No Textbook">None</option>
 </select><br>
 
-Textbook + USD$ <span> <input type="text" name="firstname" class="money col-xs-5"> </span> <br>
+Textbook + USD$ <span> <input type="number" name="money" id="money" class="money col-xs-5"> </span> <br>
 <div class="confirm">
-<button class="connect2" type="Submit"><b>Connect</b></button>
+<button class="connect2" id="submit" type="Submit">Connect</button>
 </div>
 </form>
 
+<option id="bookOptions" value="None">None</option>
+
 </body>
 <script src="js/jquery.sidr.min.js"></script>
+
+<script type="text/javascript">
+	
+	var params = $(location).attr('hash').substr(1); //pull string after # in URL
+    var paramsArr = params.split('&'); //split on &, so that each array element is a=10, b=20, c=30, ..
+    
+    var myParams = {}; //Results map
+    for(var i = 0; i < paramsArr.length; ++i) { //loop through array
+        var param = paramsArr[i]; //get element
+        var myParamStr = param.split('='); //split variable name and value
+        var paramName = myParamStr[0]; //variable name
+        var paramValue = decodeURIComponent(myParamStr[1]); //value
+        myParams['' + paramName] = paramValue; //put in hash
+    }
+    
+    var bookname = myParams['book_title'];
+    var bookedition = myParams['edition'];
+    var bookowner = myParams['owner'];
+    var currentUser = Parse.User.current();
+
+    $('#title').text(bookname + " (Edition No. "+ bookedition + ")");
+
+// this is the query to get all the books in the dropdown
+    var WantBook = Parse.Object.extend("WantBook");
+	var wantList = new Parse.Query(WantBook);
+
+	wantList.include("owner");
+	wantList.equalTo( 'ownerId', bookowner);
+	
+
+	wantList.find({
+	  success: function(results) {
+	    console.log("Successfully retrieved " + results.length + "  books.");
+	    // Do something with the returned Parse.Object values
+	    for (var i = 0; i < results.length; i++) { 
+	      var object = results[i];
+	      console.log(object.id + ' - ' + object.get('title'));
+	      var title = object.get('title');
+	      var edition = object.get('edition');
+	      var author = object.get('author')
+
+	      var option = $("#bookOptions").clone();
+	      option.attr("value", title + " (Edition No. "+ edition + ")" ).text(title + " (Edition No. "+ edition + ")   by: " + author ).appendTo(".list_of_books");
+	    }
+	  },
+	  error: function(error) {
+	    alert("Error: " + error.code + " " + error.message);
+	  }
+	});
+
+
+
+	$("#offers").submit(function(event){
+
+		event.preventDefault();
+
+		var Notification = Parse.Object.extend("Notification");
+		var offer = new Notification();
+
+		var requestorBook = $("#list_of_books").val();
+		var requestorMoney = $("#money").val();
+		 
+		offer.set("owner", bookowner);
+		offer.set("requestor", currentUser.id);
+		offer.set("ownerBook", bookname + " (Edition No. "+ bookedition + ")" );
+		offer.set("requestorBook", requestorBook);
+		offer.set("requestorMoney", requestorMoney);
+		offer.set("pending", true);
+		 
+		offer.save(null, {
+		  success: function(gameScore) {
+		    // Execute any logic that should take place after the object is saved.
+		    console.log('New object created with objectId: ' + offer.id);
+		  },
+		  error: function(gameScore, error) {
+		    // Execute any logic that should take place if the save fails.
+		    // error is a Parse.Error with an error code and description.
+		    alert('Failed to create new object, with error code: ' + error.message);
+		  }
+		});
+	});
+	
+
+
+
+	
+
+
+
+
+
+</script>
+
 </html> 

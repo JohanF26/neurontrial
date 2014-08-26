@@ -120,6 +120,7 @@ $("#book_form").submit(function(event){
 		newBook.set("searchAuthor", searchAuthor);
 		newBook.set("edition", edition);
 		newBook.set("owner", currentUser);
+		newBook.set("ownerId", currentUser.id);
 
 		newBook.save(null, {
   success: function(newBook) {
