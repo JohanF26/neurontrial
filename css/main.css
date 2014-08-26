@@ -934,3 +934,13 @@ select {
 .confirm {
 	border-top: 1px solid #aaa;
 }
+
+.action {
+	text-align: center;
+	font-size: 1.3em;
+}
+
+#person, #college, #theirTxt, #youTxt, #money {
+	color: #3399FF;
+	font-size: 1.1em;
+}
