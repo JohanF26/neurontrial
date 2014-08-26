@@ -60,7 +60,7 @@
 		 		<div class="col-xs-12">
 
 		 		<a href="add.html"><p id="add"><img src="img/add.png" height="75px" width="75px">ADD</p></a>
-			 	<a href="notifications.html"><p id="notifications"><img src="img/notifications.png" height="65px" width= "65px">NOTIFICATIONS</p></a>
+			 	<a href="notifications.html"><p id="notifications"><img src="img/notifications.png" height="65px" width= "65px"><span id="notNum" style="color: red"></span><span id="notification">NOTIFICATIONS</span></p></a>
 			 	<a href="find.html"><p id="find"><img src="img/search.png" height="75px" width="75px"> FIND</p></a>
 
 			 	</div>
@@ -78,6 +78,47 @@
 		 </script>
 
 		 <script src="js/jquery.sidr.min.js"></script>
+
+		 <script type="text/javascript">
+		
+		var offer = Parse.Object.extend("Notification");
+
+		var notifications = new Parse.Query(offer);
+		notifications.equalTo("owner", currentUser.id);
+		notifications.equalTo("pending", true)
+
+		notifications.find({
+		  success: function(results) {
+		    var newNotifications = results.length
+		    console.log(newNotifications);
+
+		    if(newNotifications === 1){
+		    	$("#notification").text('NOTIFICATION');
+		    	$("#notNum").text('(' + newNotifications + ') ');
+		    }
+
+		    else if(newNotifications >= 2){
+		    	$("#notification").text('NOTIFICATIONS');
+		    	$("#notNum").text(' (' + newNotifications + ') ');
+		    }
+
+		    else{
+		    	$("#notification").text('NOTIFICATIONS');
+		    }
+
+		    
+		    
+		 
+
+		  },
+
+		  error: function(error) {
+		    $("#notifications").text('NOTIFICATIONS')
+		  }
+		});
+
+
+		 </script>
 
 		<!-- //  <script type="text/javascript">
 		//  (function() {
