@@ -53,11 +53,51 @@
  <span class="title" id="yourTxt">txtbk</span><br> 
  for <br>
  <span id="theirTxt">textbook</span>
-Textbook + USD$ <span id="money">money</span> <br>
+Textbook + USD $<span id="money">money</span> <br>
 <div class="confirm">
-<button class="connect2" type="Submit"><b>Connect</b></button>
+<button class="connect2" id="connect2" type="Submit"><b>Accept</b></button>
 </div>
 </form>
+
+
+<script type="text/javascript">
+	var params = $(location).attr('hash').substr(1); //pull string after # in URL
+    var paramsArr = params.split('&'); //split on &, so that each array element is a=10, b=20, c=30, ..
+    
+    var myParams = {}; //Results map
+    for(var i = 0; i < paramsArr.length; ++i) { //loop through array
+        var param = paramsArr[i]; //get element
+        var myParamStr = param.split('='); //split variable name and value
+        var paramName = myParamStr[0]; //variable name
+        var paramValue = decodeURIComponent(myParamStr[1]); //value
+        myParams['' + paramName] = paramValue; //put in hash
+    }
+
+    var requestor = myParams['requestor'];
+    var requestorBook = myParams['requestorBook'];
+    var requestorMoney = myParams['requestorMoney'];
+    var ownerBook = myParams['ownerBook']
+    var notId = myParams['not_id']
+
+    console.log(requestor)
+
+    $('#person').text(requestor);
+    $('#yourTxt').text(ownerBook);
+    $('#theirTxt').text(requestorBook);
+    $('#money').text(requestorMoney);
+
+    $('#connect2').click(function(event){
+    	event.preventDefault();
+    	var Notification = Parse.Object.extend("Notification");
+		var offer = new Notification();
+		offer.set("pending", false);
+		console.log("success!");
+		location.href="notifications.html";
+
+    });
+
+</script>
+
 
 </body>
 <script src="js/jquery.sidr.min.js"></script>
