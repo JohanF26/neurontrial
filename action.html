@@ -88,9 +88,10 @@ Textbook + USD $<span id="money">money</span> <br>
 
     $('#connect2').click(function(event){
     	event.preventDefault();
-    	var Notification = Parse.Object.extend("Notification");
-		var offer = new Notification();
-		offer.set("pending", false);
+    	
+    	notId.set("pending", false);
+    	notId.save();
+
 		console.log("success!");
 		location.href="notifications.html";
 
