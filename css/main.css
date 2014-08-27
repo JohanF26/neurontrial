@@ -158,9 +158,34 @@ header {
 	padding-bottom: 15px;
 	border-radius: 50px;
 	font-family: 'Dosis', sans-serif;
-	border: solid 5px #B8BCBC;
 	color: #B8BCBC;
 	text-align: center;
+	margin: 0px;
+}
+
+.book_form button#startScan {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	height: 78px;
+	width: 250px;
+	border-radius: 50px;
+	/*border: solid 5px #B8BCBC;*/
+	box-shadow: 3px 3px 3px #888888;
+	background: -webkit-linear-gradient(#B2B2B2, #F0F0F0, #B2B2B2); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#B2B2B2, #F0F0F0, #B2B2B2); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#B2B2B2, #F0F0F0, #B2B2B2); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#B2B2B2, #F0F0F0, #B2B2B2); /* Standard syntax */
+}
+
+.book_form button#startScan:active {
+	margin-left: 8px;
+	margin-top: 15px;
+	margin-bottom: 5px;
+	box-shadow: none;
+	background: -webkit-linear-gradient(#F0F0F0, #B2B2B2, #F0F0F0); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#F0F0F0, #B2B2B2, #F0F0F0); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#F0F0F0, #B2B2B2, #F0F0F0); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#F0F0F0, #B2B2B2, #F0F0F0); /* Standard syntax */
 }
 
 /*input {
