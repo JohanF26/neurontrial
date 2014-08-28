@@ -54,6 +54,9 @@
  for <br>
  <span id="theirTxt">textbook</span>
 Textbook + USD $<span id="money">money</span> <br>
+<input id="location" type="text" name="location" style="width: 30em; text-align:center" placeholder="Where would you like to meet?" required /><br>
+<input id="time" type="time" min="0" style="width: 30em; text-align:center" name="time" placeholder="When do you want to meet?" required /><br>
+<p>**A $5 charge will be taken upon pressing accept!**</p>
 <div class="confirm">
 <button class="connect2" id="connect2" type="Submit"><b>Accept</b></button>
 </div>
@@ -76,9 +79,9 @@ Textbook + USD $<span id="money">money</span> <br>
     var requestor = myParams['requestor'];
     var requestorBook = myParams['requestorBook'];
     var requestorMoney = myParams['requestorMoney'];
-    var ownerBook = myParams['ownerBook']
-    var notId = myParams['not_id']
-
+    var ownerBook = myParams['ownerBook'];
+    var notId = myParams['not_id'];
+    
     console.log(requestor)
 
     $('#person').text(requestor);
@@ -86,14 +89,51 @@ Textbook + USD $<span id="money">money</span> <br>
     $('#theirTxt').text(requestorBook);
     $('#money').text(requestorMoney);
 
+    	var WhatSchool = Parse.Object.extend("User");
+		var schoolQuery = new Parse.Query(WhatSchool);
+		schoolQuery.equalTo("objectId", requestor);
+		schoolQuery.find({
+		  success: function(results) {
+		  	 for (var i = 0; i < results.length; i++) { 
+		      var object = results[i];
+		    console.log("Successfully retrieved " + results.length + " scores.");
+		    var getSchool = object.get('school');
+		    console.log(getSchool);
+		    $('#collegeName').text(getSchool);
+		      }
+		  },
+		  error: function(error) {
+		    alert("Error: " + error.code + " " + error.message);
+		  }
+		});
+
     $('#connect2').click(function(event){
     	event.preventDefault();
-    	
-    	notId.set("pending", false);
-    	notId.save();
-
+    	var Nots = Parse.Object.extend("Notification");
+		var query = new Parse.Query(Nots);
+		query.equalTo("objectId", notId);
+		query.find({
+		  success: function(results) {
+		    alert("Successfully retrieved " + results.length + " scores.");
+		    // Do something with the returned Parse.Object values
+		    for (var i = 0; i < results.length; i++) { 
+		      var object = results[i];
+		      alert(object.id + ' - ' + object.get('playerName'));
+		      var time = $("#time").val();
+    		  var location = $("#location").val();
+		      object.set('pending', false);
+		      object.set('place', location);
+		      object.set('time', time)
+		      object.save();
+		    }
+		  },
+		  error: function(error) {
+		    alert("Error: " + error.code + " " + error.message);
+		  }
+		});
+		
 		console.log("success!");
-		location.href="notifications.html";
+		// location.href="notifications.html";
 
     });
 
@@ -103,3 +143,8 @@ Textbook + USD $<span id="money">money</span> <br>
 </body>
 <script src="js/jquery.sidr.min.js"></script>
 </html> 
+
+<script type="text/javascript">
+
+
+</script>
