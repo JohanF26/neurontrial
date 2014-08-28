@@ -59,10 +59,10 @@
 
 		<div class="notifications" id="newNot">
 
-			<p><a href="">Nouran</a> would like to trade your <a href="">Campbell Biology (9th Edition)</a> textbook for his <a href="">Larson Chemistry (4th Edition)</a> + USD $30.00</p>
+			<p><span id="name">Nouran</span> would like to trade your <span id="yourBook">Campbell Biology (9th Edition)</span> textbook for his <span id="theirBook">Larson Chemistry (4th Edition)</span> + USD $<span id="theirValue">30.00<span>. They would like to meet you at <span id='place'></span> at the time <span id='time'></span></p>
 			<div ="yes-no">
-			<button type="submit" class="no">Accept</button>
-			<button type="submit" class="yes">Decline</button>
+			<!-- <button type="submit" class="no">Accept</button>
+			<button type="submit" class="yes">Decline</button> -->
 			</div>
 
 		</div>
@@ -126,11 +126,46 @@
 		    else{
 		    for (var i = 0; i < results.length; i++) { 
 		      var object = results[i];
-		      console.log(object.id + ' - ' + object.get('requestor'));
+		      console.log(object.id);
+		      var owner = object.get('owner');
+		      var yourBook = object.get('requestorBook');
+		      var theirBook = object.get('ownerBook');
+		      var place = object.get('place');
+		      var time = object.get('time');
+		      var theirValue = object.get('requestorMoney')
 
-		      var newNot = $("#newNot").clone();
+		      $('#yourBook').text(yourBook);
+		      $('#theirBook').text(theirBook);
+		      $('#theirValue').text(theirValue);
+		      // $('#name').text(displayName);
+		      $('#place').text(place);
+		      $('#time').text(time);
+
+		      
+
+					var WhatSchool = Parse.Object.extend("User");
+					var schoolQuery = new Parse.Query(WhatSchool);
+					schoolQuery.equalTo("objectId", owner);
+					schoolQuery.find({
+					  success: function(results) {
+					  	 for (var i = 0; i < results.length; i++) { 
+					      var object = results[i];
+					    console.log("Successfully retrieved " + results.length + " scores.");
+					    var getSchool = object.get('school');
+					    var getUser = object.get('firstName');
+					    var getUserLast = object.get('lastName');
+					    var displayName = (getUser + " " + getUserLast)
+					    console.log(displayName);
+					    $('#name').text(displayName);
+					      }
+					  },
+					  error: function(error) {
+					    alert("Error: " + error.code + " " + error.message);
+					  }
+					});
+
+			  var newNot = $("#newNot").clone();
 			  newNot.appendTo(".col-xs-12");
-
 			  newNot.show();
 			  
 				}; // ends for loop
