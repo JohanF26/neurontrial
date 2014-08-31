@@ -970,11 +970,11 @@ select {
 	font-size: 1.1em;
 }
 
-#title, #author, #isbn {
+#searchTitle, #searchAuthor, #searchIsbn {
 	border: 1px solid #aaa;
 
 }
 
-#edition, #description, #condition {
+#edition, #description, #addCondition {
 	border: 1px solid #bbb;
 }
