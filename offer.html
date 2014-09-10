@@ -51,7 +51,7 @@
 <p> Trade <span class="title" id="title">txt</span> for your<br>
 
 <select id="list_of_books" class="list_of_books">
-   <option id="bookOptions" value="No Textbook">None</option>
+   <option id="bookOptions" value="No ">None</option>
 </select><br>
 
 Textbook + USD$ <span> <input type="number" name="money" id="money" class="money col-xs-5"> </span> <br>
@@ -132,6 +132,8 @@ Textbook + USD$ <span> <input type="number" name="money" id="money" class="money
 		offer.set("requestorBook", requestorBook);
 		offer.set("requestorMoney", requestorMoney);
 		offer.set("pending", true);
+		offer.set("new", true);
+		
 		 
 		offer.save(null, {
 		  success: function(gameScore) {

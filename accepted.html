@@ -59,7 +59,7 @@
 
 		<div class="notifications" id="newNot">
 
-			<p><span id="name">Nouran</span> would like to trade your <span id="yourBook">Campbell Biology (9th Edition)</span> textbook for his <span id="theirBook">Larson Chemistry (4th Edition)</span> + USD $<span id="theirValue">30.00<span>. They would like to meet you at <span id='place'></span> at the time <span id='time'></span></p>
+			<p><span id="nombre">Nouran</span> would like to trade your <span id="yourBook">Campbell Biology (9th Edition)</span> textbook for <span id="theirBook">Larson Chemistry (4th Edition)</span> + USD $<span id="theirValue">30.00</span>. They would like to meet you at <span id='place'></span> at the time <span id='time'></span></p>
 			<div ="yes-no">
 			<!-- <button type="submit" class="no">Accept</button>
 			<button type="submit" class="yes">Decline</button> -->
@@ -128,41 +128,43 @@
 		      var object = results[i];
 		      console.log(object.id);
 		      var owner = object.get('owner');
+		      var realName = object.get('realName')
 		      var yourBook = object.get('requestorBook');
 		      var theirBook = object.get('ownerBook');
 		      var place = object.get('place');
 		      var time = object.get('time');
-		      var theirValue = object.get('requestorMoney')
+		      var theirValue = object.get('requestorMoney');
 
-		      $('#yourBook').text(yourBook);
-		      $('#theirBook').text(theirBook);
+		   //    		var WhatSchool = Parse.Object.extend("User");
+					// var schoolQuery = new Parse.Query(WhatSchool);
+					// schoolQuery.equalTo("objectId", owner);
+					// schoolQuery.find({
+					//   success: function(results) {
+					//   	 for (var i = 0; i < results.length; i++) { 
+					//       var object = results[i];
+					//     console.log("Successfully retrieved " + results.length + " scores.");
+					//     var getSchool = object.get('school');
+					//     var getUser = object.get('firstName');
+					//     var getUserLast = object.get('lastName');
+					//     var displayName = (getUser + " " + getUserLast)
+					//     console.log(displayName);
+					//     $('#nombre').text('displayName');
+					//       }
+					//   },
+					//   error: function(error) {
+					//     alert("Error: " + error.code + " " + error.message);
+					//   }
+					// });
+
+
+		      $('#yourBook').text(theirBook);
+		      $('#theirBook').text(yourBook);
 		      $('#theirValue').text(theirValue);
-		      // $('#name').text(displayName);
+		      $('#nombre').text(realName);
 		      $('#place').text(place);
 		      $('#time').text(time);
-
 		      
 
-					var WhatSchool = Parse.Object.extend("User");
-					var schoolQuery = new Parse.Query(WhatSchool);
-					schoolQuery.equalTo("objectId", owner);
-					schoolQuery.find({
-					  success: function(results) {
-					  	 for (var i = 0; i < results.length; i++) { 
-					      var object = results[i];
-					    console.log("Successfully retrieved " + results.length + " scores.");
-					    var getSchool = object.get('school');
-					    var getUser = object.get('firstName');
-					    var getUserLast = object.get('lastName');
-					    var displayName = (getUser + " " + getUserLast)
-					    console.log(displayName);
-					    $('#name').text(displayName);
-					      }
-					  },
-					  error: function(error) {
-					    alert("Error: " + error.code + " " + error.message);
-					  }
-					});
 
 			  var newNot = $("#newNot").clone();
 			  newNot.appendTo(".col-xs-12");
