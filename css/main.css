@@ -171,10 +171,10 @@ header {
 	border-radius: 50px;
 	/*border: solid 5px #B8BCBC;*/
 	box-shadow: 3px 3px 3px #888888;
-	background: -webkit-linear-gradient(#B2B2B2, #F0F0F0, #B2B2B2); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(#B2B2B2, #F0F0F0, #B2B2B2); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(#B2B2B2, #F0F0F0, #B2B2B2); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(#B2B2B2, #F0F0F0, #B2B2B2); /* Standard syntax */
+	background: -webkit-linear-gradient(#bFbFbF, #F0F0F0, #bFbFbF); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(#bFbFbF, #F0F0F0, #bFbFbF); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(#bFbFbF, #F0F0F0, #bFbFbF); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(#bFbFbF, #F0F0F0, #bFbFbF); /* Standard syntax */
 }
 
 .book_form button#startScan:active {
@@ -219,7 +219,7 @@ textarea {
 }
 
 .book_form li:last-child {
-	border-bottom: 1px solid #777
+	border-bottom: 1px solid #dfdfdf;
 }
 
 .col-xs-8 {
@@ -977,4 +977,8 @@ select {
 
 #edition, #description, #condition {
 	border: 1px solid #bbb;
+}
+
+p.no_box {
+	border: 3px solid #eee;
 }
