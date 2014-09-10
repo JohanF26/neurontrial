@@ -127,18 +127,17 @@ Textbook + USD $<span id="money">money</span> <br>
 		      object.set('place', location);
 		      object.set('time', time);
 		      object.set('realName', currentUser.attributes.firstName + " " + currentUser.attributes.lastName);
-		      object.save();
+		      object.save()
+		      location.href="notifications.html";
 
-		      
-
-		    }
+		      }
 		  },
 		  error: function(error) {
 		    alert("Error: " + error.code + " " + error.message);
 		  }
 		});
 
-		location.href="notification.html";
+		
 		
 		
 		// location.href="notifications.html";
