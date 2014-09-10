@@ -19,6 +19,7 @@ function startScan() {
                 $("#title").val(book["title_long"]);
                 $("#author").val(book["author_data"][0]["name"]);
                 $("#isbn").val(book["isbn13"]);
+                $("#description").val(book["summary"])
             });
 
 		}, 
