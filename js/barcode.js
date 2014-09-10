@@ -18,7 +18,7 @@ function startScan() {
                 var book = api_result["data"][0];
                 $("#title").val(book["title_long"]);
                 $("#author").val(book["author_data"][0]["name"]);
-                $("isbn").val(book["isbn13"]);
+                $("#isbn").val(book["isbn13"]);
             });
 
 		}, 
